@@ -1,0 +1,101 @@
+;competition;date;distance;finishCoords;finishPort;gliderImat;gliderType;pilotClub;pilotName;shape;speed;startCoords;startPort;type
+0;0;07.01.2019;143.6;32'12'734S,148'13'144E;;VH-GKC;Duo Discus (T) (700kg);Mladá Boleslav;Vojtěch Hájek;polygon s 5OB;39.8;32'12'964S,148'17'118E;;není možné podle pravidel bodovat
+1;0;06.01.2019;810.2;23'26'000S,18'16'167E;;OK-7393;HpH 304 TS Twin Shark (M) S;Zbraslavice;Jaroslav Potměšil;trojúhelník s odletem z ramene;110.18;23'26'000S,18'16'167E;;rychlostní let se změnou tratě za letu
+2;0;06.01.2019;939.7;23'26'000S,18'16'167E;;OK-2031;HpH 304S/SJ/M SHARK /18m (600kg);Holešov;Jiří Kusbach;polygon s 5OB;127.63;23'26'000S,18'16'167E;;rychlostní let se změnou tratě za letu
+3;0;05.01.2019;719.1;23'29'900S,17'44'840E;;D-KOWL;Arcus E/M/S/T;Prievidza;Gabriela Belakova;polygon s 3OB;123.11;23'19'667S,17'56'833E;;volný let na vzdálenost
+4;0;05.01.2019;355.9;30'34'000S,25'32'000E;;YU-4477;JS1-A/B/C(TJ) 18;Česká Lípa;Petr Hotový;trojúhelník s odletem z ramene;101.37;30'34'000S,25'32'000E;;rychlostní let se změnou tratě za letu
+5;0;05.01.2019;360.1;30'34'192S,25'30'532E;;D-KSEL;Duo Discus X(T);Plzeň-Letkov;Roman Lanzendorf;polygon s 5OB;86.25;30'33'056S,25'31'763E;;není možné podle pravidel bodovat
+6;0;05.01.2019;821.3;23'26'000S,18'16'167E;;OK-2031;HpH 304S/SJ/M SHARK /18m (600kg);Holešov;Jiří Kusbach;polygon s 3OB;129.46;23'26'000S,18'16'167E;;rychlostní let podle deklarace
+7;0;05.01.2019;821.3;23'26'000S,18'16'167E;;OK-7393;HpH 304 TS Twin Shark (M) S;Zbraslavice;Petr Stárek;polygon s 3OB;129.34;23'26'000S,18'16'167E;;rychlostní let podle deklarace
+8;0;04.01.2019;928.9;30'32'433S,25'30'683E;;YU-4477;JS1-A/B/C(TJ) 18;Česká Lípa;Petr Hotový;polygon s 5OB;117.49;30'32'433S,25'30'683E;;rychlostní let se změnou tratě za letu
+9;0;04.01.2019;828.3;30'33'717S,25'31'767E;;D-KSEL;Duo Discus X(T);Broumov;Vratislav Šrám;polygon s 5OB;109.16;30'33'717S,25'31'767E;;rychlostní let se změnou tratě za letu
+10;0;03.01.2019;786.5;30'32'433S,25'30'683E;;YU-4477;JS1-A/B/C(TJ) 18;Česká Lípa;Petr Hotový;polygon s 5OB;135.4;30'32'433S,25'30'683E;;rychlostní let se změnou tratě za letu
+11;0;03.01.2019;677.5;29'03'490S,23'48'100E;;OK 2729;ASG-29(E) 18m;GAC Benešov;Ondřej Dupal;2OB;145.93;30'34'000S,25'32'000E;;volný let na vzdálenost
+12;0;02.01.2019;471.5;30'33'504S,25'32'824E;;OK 2729;ASG-29(E) 18m;GAC Benešov;Ondřej Dupal;2OB;121.37;29'47'283S,24'07'983E;;volný let na vzdálenost
+13;0;02.01.2019;1023.9;23'19'667S,17'56'833E;;D-KOWL;Arcus E/M/S/T;Prievidza;Gabriela Belakova;polygon s 5OB;129.89;23'19'667S,17'56'833E;;rychlostní let se změnou tratě za letu
+14;0;03.01.2019;433.6;30'33'717S,25'31'767E;;D-KSEL;Duo Discus X(T);Plzeň-Letkov;Roman Lanzendorf;polygon s 5OB;88.88;30'33'717S,25'31'767E;;rychlostní let se změnou tratě za letu
+15;0;03.01.2019;866.9;23'26'000S,18'16'167E;;OK-7393;HpH 304 TS Twin Shark (M) S;Zbraslavice;Jaroslav Potměšil;polygon s 3OB;120.11;23'26'000S,18'16'167E;;rychlostní let se změnou tratě za letu
+16;0;03.01.2019;824;23'26'000S,18'16'167E;;OK-2031;HpH 304S/SJ/M SHARK /18m (600kg);Holešov;Jiří Kusbach;polygon s 5OB;132.32;23'26'000S,18'16'167E;;rychlostní let se změnou tratě za letu
+17;0;02.01.2019;1025.3;23'26'000S,18'16'167E;;OK-7393;HpH 304 TS Twin Shark (M) S;Zbraslavice;Petr Stárek;polygon s 3OB;129.72;23'26'000S,18'16'167E;;rychlostní let podle deklarace
+18;0;02.01.2019;1040.8;23'26'000S,18'16'167E;;OK-2031;HpH 304S/SJ/M SHARK /18m (600kg);Holešov;Jiří Kusbach;polygon s 5OB;126.57;23'26'000S,18'16'167E;;rychlostní let se změnou tratě za letu
+19;0;31.12.2018;85.6;48'16'509N,18'08'448E;;D-7037;H-201 Std. Libelle WL;Nitra;Pavol Klein;polygon s 5OB;71.52;48'17'838N,18'07'001E;;není možné podle pravidel bodovat
+20;0;01.01.2019;108.4;49'57'537N,15'30'768E;;OK-3969;ASW-15B;VAP;Kristina Šantrůčková;polygon s 5OB;67.12;49'52'664N,15'34'794E;;není možné podle pravidel bodovat
+21;0;01.01.2019;135.7;49'57'667N,15'30'667E;;8510;VSO-10;VAP;Michal Taufer;polygon s 5OB;95.3;49'57'667N,15'30'667E;;rychlostní let podle deklarace
+22;0;01.01.2019;760.4;23'26'000S,18'16'167E;;OK-7393;HpH 304 TS Twin Shark (M) S;Zbraslavice;Jaroslav Potměšil;FAI trojúhelník s odletem z ramene;114.71;23'26'000S,18'16'167E;;rychlostní let podle deklarace
+23;0;01.01.2019;760.4;23'26'000S,18'16'167E;;OK-2031;HpH 304S/SJ/M SHARK /18m (600kg);Holešov;Jiří Kusbach;FAI trojúhelník s odletem z ramene;123.13;23'26'000S,18'16'167E;;rychlostní let podle deklarace
+24;0;01.01.2019;621.8;30'33'700S,25'31'767E;;YU-4477;JS1-A/B/C(TJ) 18;Broumov;Vratislav Šrám;polygon s 5OB;136.41;30'33'700S,25'31'767E;;rychlostní let se změnou tratě za letu
+25;0;01.01.2019;330.8;30'32'433S,25'30'683E;;D-KSEL _;Duo Discus X(T);Dvůr Králové;Petr Pánek;polygon s 3OB;96;30'32'433S,25'30'683E;;rychlostní let se změnou tratě za letu
+26;0;31.12.2018;610.4;30'33'700S,25'31'767E;;YU-4477;JS1-A/B/C(TJ) 18;Dvůr Králové;Petr Pánek;trojúhelník;120.98;30'33'700S,25'31'767E;;rychlostní let se změnou tratě za letu
+27;0;31.12.2018;843.4;23'26'000S,18'16'167E;;OK-2031;HpH 304S/SJ/M SHARK /18m (600kg);Holešov;Jiří Kusbach;polygon s 3OB;117;23'26'000S,18'16'167E;;rychlostní let podle deklarace
+28;0;31.12.2018;800.7;23'37'602S,17'43'012E;;OK-7393;HpH 304 TS Twin Shark (M) S;Zbraslavice;Petr Stárek;polygon s 3OB;113.48;23'26'000S,18'16'167E;;volný let na vzdálenost
+29;0;31.12.2018;716.6;30'33'717S,25'31'767E;;D-KSEL;Duo Discus X(T);Plzeň-Letkov;Roman Lanzendorf;polygon s 3OB;103.62;30'33'717S,25'31'767E;;rychlostní let se změnou tratě za letu
+30;0;31.12.2018;1011.4;29'00'817S,23'48'233E;;OK 2729;ASG-29(E) 18m;GAC Benešov;Ondřej Dupal;FAI trojúhelník s odletem z ramene;155.97;29'00'817S,23'48'233E;;rychlostní let podle deklarace
+31;0;31.12.2018;65.3;48'26'573N,17'32'912E;;OM-5219;ASW-20 (A)+F /15m;Bratislava;Miloš Horvát;polygon s 5OB;33.2;48'31'546N,17'26'578E;;není možné podle pravidel bodovat
+32;0;31.12.2018;238.8;48'16'394N,18'08'934E;;OM-8800;DG-1000S 20m;Nitra;Peter Hupka;polygon s 5OB;55.6;48'18'652N,18'08'036E;;není možné podle pravidel bodovat
+33;0;31.12.2018;16.8;49'14'070N,18'37'014E;;OM-0233;L-23 Super Blaník;Žilina;Peter Šamaj;polygon s 5OB;27.18;49'13'032N,18'37'787E;;není možné podle pravidel bodovat
+34;0;31.12.2018;50.9;50'06'407N,14'06'508E;;D-6806;SZD-30 Pirat;Kladno;Miroslav Mezník;polygon s 5OB;73.18;50'08'323N,13'55'261E;;není možné podle pravidel bodovat
+35;0;31.12.2018;160.6;48'15'686N,18'08'680E;;OM-6600;LS-6;Nitra;Igor Zverko;polygon s 5OB;59.38;48'17'563N,18'11'853E;;není možné podle pravidel bodovat
+36;0;31.12.2018;37.5;48'16'714N,18'08'073E;;OM-8506;VSO-10;Nitra;Ľuboš Benďák;polygon s 5OB;28.39;48'20'488N,18'04'265E;;není možné podle pravidel bodovat
+37;0;31.12.2018;15;48'47'440N,16'53'695E;;OK-6622;G-102 Astir cs;Břeclav;Václav Hrůza;polygon s 5OB;41.86;48'47'625N,16'49'140E;;není možné podle pravidel bodovat
+38;0;30.12.2018;158.2;23'26'000S,18'16'167E;;OK-2031;HpH 304M SHARK /18m (560kg);Holešov;Jiří Kusbach;polygon s 3OB;99.43;23'26'000S,18'16'167E;;rychlostní let se změnou tratě za letu
+39;0;30.12.2018;413.6;23'26'000S,18'16'167E;;OK-7393;HpH 304 TS Twin Shark (M) S;Zbraslavice;Petr Stárek;polygon s 5OB;107.11;23'26'000S,18'16'167E;;rychlostní let se změnou tratě za letu
+40;0;29.12.2018;31.2;48'16'639N,18'08'128E;;OM-8506;VSO-10;Nitra;Ľuboš Benďák;polygon s 5OB;39.19;48'20'499N,18'11'225E;;není možné podle pravidel bodovat
+41;0;23.12.2018;36.1;48'16'057N,18'08'848E;;OM-8506;VSO-10;Nitra;Ľuboš Benďák;polygon s 5OB;24.64;48'20'133N,18'08'774E;;není možné podle pravidel bodovat
+42;0;29.12.2018;29.3;48'16'751N,18'08'025E;;OM-8506;VSO-10;Nitra;Peter Hupka;polygon s 5OB;35.4;48'20'976N,18'04'456E;;není možné podle pravidel bodovat
+43;0;28.12.2018;77.6;48'27'525N,17'31'772E;;OM-0329;Centrair C-101A Pegase;Bratislava;Jan Kovalčík;polygon s 5OB;52.62;48'27'017N,17'23'894E;;není možné podle pravidel bodovat
+44;0;12.12.2018;563;33'39'304S,19'25'419E;;ZS-GOK;G-103 Twin Basic;Dvůr Králové;Petr Pánek;polygon s 5OB;85.53;33'47'106S,19'21'215E;;není možné podle pravidel bodovat
+45;0;20.12.2018;23.6;26'40'581S,27'04'833E;;YU-4477;JS1-A/B/C(TJ) 18;Dvůr Králové;Petr Pánek;polygon s 5OB;93.36;26'39'839S,27'05'510E;;není možné podle pravidel bodovat
+46;0;26.12.2018;702.1;23'26'000S,18'16'167E;;OK-7393;HpH 304 TS Twin Shark (M) S;Zbraslavice;Jaroslav Potměšil;FAI trojúhelník s odletem z ramene;104.26;23'26'000S,18'16'167E;;rychlostní let se změnou tratě za letu
+47;0;26.12.2018;1012.8;30'33'700S,25'31'767E;;YU-4477;JS1-A/B/C(TJ) 18;Dvůr Králové;Petr Pánek;polygon s 5OB;134.7;30'33'700S,25'31'767E;;rychlostní let se změnou tratě za letu
+48;0;26.12.2018;785.5;23'26'000S,18'16'167E;;OK-2031;HpH 304S/SJ/M SHARK /18m (600kg);Holešov;Jiří Kusbach;polygon s 5OB;147.79;23'26'000S,18'16'167E;;rychlostní let se změnou tratě za letu
+49;0;26.12.2018;26.9;49'17'401N,17'25'078E;;OK-8431;VT-116 Orlik II;Holešov;Michal Čechmánek;polygon s 5OB;58.8;49'15'368N,17'22'983E;;není možné podle pravidel bodovat
+50;0;25.12.2018;906.7;32'12'950S,148'13'467E;;VH-GKC;Duo Discus (T) (700kg);Toužim;Pavel Jiránek;FAI trojúhelník s odletem z ramene;100.25;32'12'950S,148'13'467E;;rychlostní let se změnou tratě za letu
+51;0;26.12.2018;564.5;32'13'033S,148'13'417E;;VH-GBV;H-201 Std. Libelle;Mladá Boleslav;Vojtěch Hájek;FAI trojúhelník s odletem z ramene;94.09;32'13'033S,148'13'417E;;rychlostní let se změnou tratě za letu
+52;0;25.12.2018;1051.1;23'26'000S,18'16'167E;;OK-7393;HpH 304 TS Twin Shark (M) S;Zbraslavice;Petr Stárek;polygon s 5OB;132.77;23'26'000S,18'16'167E;;rychlostní let se změnou tratě za letu
+53;0;25.12.2018;1004.9;23'26'000S,18'16'167E;;OK-2031;HpH 304S/SJ/M SHARK /18m (600kg);Holešov;Jiří Kusbach;polygon s 5OB;133.91;23'26'000S,18'16'167E;;rychlostní let se změnou tratě za letu
+54;0;25.12.2018;1013.7;30'33'700S,25'31'767E;;YU-4477;JS1-A/B/C(TJ) 18;Dvůr Králové;Petr Pánek;polygon s 5OB;142.22;30'33'700S,25'31'767E;;rychlostní let se změnou tratě za letu
+55;0;24.12.2018;653.6;23'26'000S,18'16'167E;;OK-2031;HpH 304S/SJ/M SHARK /18m (600kg);Holešov;Jiří Kusbach;polygon s 5OB;134.34;23'26'000S,18'16'167E;;rychlostní let se změnou tratě za letu
+56;0;24.12.2018;887.1;23'26'000S,18'16'167E;;OK-7393;HpH 304 TS Twin Shark (M) S;Zbraslavice;Petr Stárek;polygon s 5OB;125.41;23'26'000S,18'16'167E;;rychlostní let se změnou tratě za letu
+57;0;24.12.2018;550;30'33'700S,25'31'767E;;YU-4477;JS1-A/B/C(TJ) 18;Dvůr Králové;Petr Pánek;trojúhelník s odletem z ramene;111.76;30'33'700S,25'31'767E;;rychlostní let se změnou tratě za letu
+58;0;23.12.2018;182.6;48'15'605N,18'05'866E;;OM-0404;DG-400 /17m;Nitra;Radoslav Čagala;polygon s 5OB;89.75;48'20'360N,18'05'783E;;není možné podle pravidel bodovat
+59;0;23.12.2018;871.8;23'26'000S,18'16'167E;;OK-7393;HpH 304 TS Twin Shark (M) S;Zbraslavice;Jaroslav Potměšil;FAI trojúhelník s odletem z ramene;120.34;23'26'000S,18'16'167E;;rychlostní let se změnou tratě za letu
+60;0;23.12.2018;729.4;30'33'700S,25'31'767E;;YU-4477;JS1-A/B/C(TJ) 18;Dvůr Králové;Petr Pánek;trojúhelník;134.87;30'33'700S,25'31'767E;;rychlostní let podle deklarace
+61;0;23.12.2018;216.6;48'17'344N,18'03'785E;;OM-0201;H-201 Std. Libelle;Nitra;Pavol Klein;polygon s 5OB;97.91;48'21'053N,18'05'513E;;není možné podle pravidel bodovat
+62;0;23.12.2018;209.8;48'16'904N,18'08'311E;;OM-8888;LS-8s(t) /18m;Nitra;Dominik Jančík;polygon s 5OB;66.37;48'20'567N,18'06'300E;;volný let na vzdálenost
+63;0;22.12.2018;168.2;49'59'012N,15'28'271E;;OK-3210;Std. Cirrus WL;Chrudim;Jiří Donát;polygon s 5OB;79.31;49'54'349N,15'33'918E;;není možné podle pravidel bodovat
+64;0;23.12.2018;510.1;32'13'033S,148'13'417E;;VH-GKC;Duo Discus (T) (700kg);Mladá Boleslav;Vojtěch Hájek;trojúhelník s odletem z ramene;90.68;32'13'033S,148'13'417E;;rychlostní let podle deklarace
+65;0;22.12.2018;751.1;23'26'000S,18'16'167E;;OK-2031;HpH 304M SHARK /18m (560kg);Kyjov;Lubomír Motl;polygon s 3OB;131.93;23'26'000S,18'16'167E;;rychlostní let se změnou tratě za letu
+66;0;22.12.2018;731.8;23'25'741S,18'18'677E;;0K-7393;HpH 304 TS Twin Shark (M) S;Zbraslavice;Jaroslav Potměšil;polygon s 5OB;130.27;23'16'782S,18'34'211E;;není možné podle pravidel bodovat
+67;0;22.12.2018;681.3;30'33'700S,25'31'767E;;YU-4477;JS1-A/B/C(TJ) 18;Dvůr Králové;Petr Pánek;trojúhelník;112.99;30'33'700S,25'31'767E;;rychlostní let se změnou tratě za letu
+68;0;22.12.2018;99.5;49'56'378N,15'32'992E;;OK-3210;Std. Cirrus;Chrudim;Vítězslav Pouč;polygon s 5OB;75.41;49'55'146N,15'33'321E;;není možné podle pravidel bodovat
+69;0;22.12.2018;234.9;49'43'356N,15'46'202E;;OK-6744;ASW-20 (A)+F /15m;VAP;Jan Černý;polygon s 5OB;113.83;49'43'356N,15'46'202E;;rychlostní let podle deklarace
+70;0;21.12.2018;882.3;23'50'773S,18'25'517E;;OK-7393;HpH 304 TS Twin Shark (M) S;Kunovice;Tonda Koníček;polygon s 3OB;115.11;23'26'000S,18'16'167E;;volný let na vzdálenost
+71;0;22.12.2018;767.9;32'12'950S,148'13'467E;;VH-GKC;Duo Discus (T) (700kg);Toužim;Pavel Jiránek;polygon s 3OB;110.95;32'12'950S,148'13'467E;;rychlostní let podle deklarace
+72;0;21.12.2018;382.8;50'13'772N,17'25'600E;;;Janus c/cT/cM (FG);Opolski;Zbigniew Kunas;polygon s 5OB;67;50'09'433N,17'10'283E;;volný let na vzdálenost
+73;0;21.12.2018;805.5;23'25'707S,18'17'336E;;OK-2031;HpH 304M SHARK /18m (560kg);Kyjov;Lubomír Motl;2OB;99.52;23'26'000S,18'16'167E;;volný let na vzdálenost
+74;0;20.12.2018;574.1;23'26'000S,18'16'167E;;OK-2031;HpH 304S/SJ/M SHARK /18m (600kg);Kunovice;Tonda Koníček;trojúhelník s odletem z ramene;125.43;23'26'000S,18'16'167E;;rychlostní let se změnou tratě za letu
+75;0;20.12.2018;710.1;23'26'000S,18'16'167E;;OK-7393;HpH 304 TS Twin Shark (M) S;Břeclav;Pavel Zima;polygon s 5OB;124.54;23'26'000S,18'16'167E;;rychlostní let se změnou tratě za letu
+76;0;20.12.2018;388.4;22'49'137S,18'44'470E;;D-KKEX;Arcus E/M/S/T;Kralupy nad Vltavou;Jan Šimon;2OB;111.15;23'19'667S,17'56'833E;;volný let na vzdálenost
+77;0;19.12.2018;874.7;23'26'000S,18'16'167E;;OK-7393;HpH 304 TS Twin Shark (M) S;Kyjov;Lubomír Motl;polygon s 3OB;115.68;23'26'000S,18'16'167E;;rychlostní let se změnou tratě za letu
+78;0;19.12.2018;884.8;22'58'840S,18'35'785E;;OK-2031;HpH 304M SHARK /18m (560kg);Břeclav;Pavel Zima;polygon s 3OB;122.81;23'26'000S,18'16'167E;;volný let na vzdálenost
+79;0;19.12.2018;749.3;23'19'667S,17'56'833E;;D-KNGG;HpH 304S/SJ/M SHARK /18m (600kg);Šumperk;Marek Blaťák;polygon s 3OB;131.63;23'19'667S,17'56'833E;;rychlostní let podle deklarace
+80;0;19.12.2018;749.3;23'19'667S,17'56'833E;;D-KKEX;Arcus E/M/S/T;Chrudim;Pavel Trojan;polygon s 3OB;133.04;23'19'667S,17'56'833E;;rychlostní let podle deklarace
+81;0;19.12.2018;138.8;32'13'052S,148'13'689E;;VH-WVS;Duo Discus (T) (700kg);Mladá Boleslav;Vojtěch Hájek;polygon s 5OB;91.37;32'10'390S,148'15'294E;;není možné podle pravidel bodovat
+82;0;18.12.2018;527.1;23'26'000S,18'16'167E;;OK-2031;HpH 304M SHARK /18m (560kg);Kyjov;Lubomír Motl;FAI trojúhelník s odletem z ramene;105.92;23'26'000S,18'16'167E;;rychlostní let podle deklarace
+83;0;17.12.2018;832.5;23'40'069S,18'12'618E;;D-KNGG;HpH 304S/SJ/M SHARK /18m (600kg);Kralupy nad Vltavou;Jan Šimon;polygon s 3OB;121.19;23'19'667S,17'56'833E;;volný let na vzdálenost
+84;0;17.12.2018;765.7;23'19'667S,17'56'833E;;D-KKEX;Arcus E/M/S/T;Chrudim;Pavel Trojan;polygon s 3OB;117.83;23'19'667S,17'56'833E;;rychlostní let se změnou tratě za letu
+85;0;17.12.2018;1004.5;23'26'000S,18'16'167E;;OK-7393;HpH 304 TS Twin Shark (M) S;Břeclav;Pavel Zima;polygon s 3OB;138.14;23'26'000S,18'16'167E;;rychlostní let podle deklarace
+86;0;17.12.2018;1004.5;23'26'000S,18'16'167E;;OK-2031;HpH 304S/SJ/M SHARK /18m (600kg);Kunovice;Tonda Koníček;polygon s 3OB;137.14;23'26'000S,18'16'167E;;rychlostní let podle deklarace
+87;0;16.12.2018;905.1;23'16'195S,19'09'296E;;D-KNGG;HpH 304S/SJ/M SHARK /18m (600kg);Kralupy nad Vltavou;Jan Šimon;2OB;127.7;23'19'667S,17'56'833E;;volný let na vzdálenost
+88;0;16.12.2018;886.6;23'26'000S,18'16'167E;;OK-7393;HpH 304 TS Twin Shark (M) S;Kyjov;Lubomír Motl;FAI trojúhelník s odletem z ramene;115.19;23'26'000S,18'16'167E;;rychlostní let se změnou tratě za letu
+89;0;16.12.2018;1038;23'26'000S,18'16'167E;;OK-2031;HpH 304M SHARK /18m (560kg);Břeclav;Pavel Zima;FAI trojúhelník;125.4;23'26'000S,18'16'167E;;rychlostní let podle deklarace
+90;0;16.12.2018;1015.9;23'19'667S,17'56'833E;;D-KKEX;Arcus E/M/S/T;Šumperk;Marek Blaťák;FAI trojúhelník;124.44;23'19'667S,17'56'833E;;rychlostní let podle deklarace
+91;0;15.12.2018;835.9;23'26'000S,18'16'167E;;OK-2031;HpH 304M SHARK /18m (560kg);Kyjov;Lubomír Motl;FAI trojúhelník s odletem z ramene;134.43;23'26'000S,18'16'167E;;rychlostní let se změnou tratě za letu
+92;0;15.12.2018;304.1;23'19'667S,17'56'833E;;D-KNGG;HpH 304S/SJ/M SHARK /18m (600kg);Kralupy nad Vltavou;Jan Šimon;FAI trojúhelník s odletem z ramene;112.93;23'19'667S,17'56'833E;;rychlostní let podle deklarace
+93;0;15.12.2018;825.5;23'26'000S,18'16'167E;;OK-7393;HpH 304 TS Twin Shark (M) S;Kunovice;Tonda Koníček;trojúhelník s odletem z ramene;139.45;23'26'000S,18'16'167E;;rychlostní let se změnou tratě za letu
+94;0;15.12.2018;525.4;23'19'667S,17'56'833E;;D-KKEX;Arcus E/M/S/T;Chrudim;Pavel Trojan;FAI trojúhelník s odletem z ramene;112.26;23'19'667S,17'56'833E;;rychlostní let podle deklarace
+95;0;14.12.2018;938.7;23'19'667S,17'56'833E;;D-KNGG;HpH 304S/SJ/M SHARK /18m (600kg);Šumperk;Marek Blaťák;FAI trojúhelník s odletem z ramene;138.71;23'19'667S,17'56'833E;;rychlostní let se změnou tratě za letu
+96;0;14.12.2018;981.2;23'26'000S,18'16'167E;;OK-2031;HpH 304S/SJ/M SHARK /18m (600kg);Kunovice;Tonda Koníček;FAI trojúhelník s odletem z ramene;139.71;23'26'000S,18'16'167E;;rychlostní let se změnou tratě za letu
+97;0;14.12.2018;1024.4;23'26'000S,18'16'167E;;OK-7393;HpH 304 TS Twin Shark (M) S;Břeclav;Pavel Zima;FAI trojúhelník s odletem z ramene;130.06;23'26'000S,18'16'167E;;rychlostní let podle deklarace
+98;0;14.12.2018;951.9;23'19'667S,17'56'833E;;D-KKEX;Arcus E/M/S/T;Kralupy nad Vltavou;Jan Šimon;FAI trojúhelník s odletem z ramene;139.04;23'19'667S,17'56'833E;;rychlostní let se změnou tratě za letu
+99;0;13.12.2018;800.8;23'19'667S,17'56'833E;;D-KNGG;HpH 304S/SJ/M SHARK /18m (600kg);Šumperk;Marek Blaťák;FAI trojúhelník s odletem z ramene;120.21;23'19'667S,17'56'833E;;rychlostní let se změnou tratě za letu

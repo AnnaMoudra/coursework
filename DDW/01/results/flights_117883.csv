@@ -1,0 +1,101 @@
+;competition;date;distance;finishCoords;finishPort;gliderImat;gliderType;pilotClub;pilotName;shape;speed;startCoords;startPort;type
+0;0;01.11.2018;304.1;50'03'350N,17'26'259E;;D-2371;DG-1000S 20m;Žilina;Samuel Hruška;polygon s 5OB;53.92;50'15'890N,17'11'920E;;není možné podle pravidel bodovat
+1;0;01.11.2018;84.8;50'18'817N,17'18'983E;;;SZD-50 Puchacz;Wrocławski;Andrzej B;polygon s 5OB;59.22;50'18'563N,17'12'873E;;není možné podle pravidel bodovat
+2;0;01.11.2018;352.3;50'09'433N,17'10'283E;;;Janus c/cT/cM (FG);Opolski;Zbigniew Kunas;polygon s 3OB;107.92;50'09'433N,17'10'283E;;rychlostní let podle deklarace
+3;0;01.11.2018;360.5;50'17'922N,17'19'312E;;OM-1000;ASW-20 (A)+F /15m;Žilina;Milan Surovčik;polygon s 5OB;71.12;50'16'088N,17'13'000E;;není možné podle pravidel bodovat
+4;0;31.10.2018;53.7;50'18'568N,17'18'366E;;OM-1000;ASW-20 (A)+F /15m;Žilina;Milan Surovčik;polygon s 5OB;15.23;50'11'104N,17'07'243E;;není možné podle pravidel bodovat
+5;0;01.11.2018;775.5;50'04'597N,17'41'510E;;0K-2977;ASG-29(E) 18m;Zbraslavice;Jaroslav Tomaňa;polygon s 5OB;66.49;49'59'633N,17'28'500E;;volný let na vzdálenost
+6;0;01.11.2018;535.6;50'17'881N,17'18'810E;;OM_1111;ASW-20 (A)+F /15m;Žilina;Stanislav Chupáň;polygon s 5OB;95.53;50'02'000N,17'18'817E;;volný let na vzdálenost
+7;0;01.11.2018;416.6;50'16'494N,17'24'426E;;D-0281;Glasflügel 401;FC Langhennersdorf;Uwe Schlenker;polygon s 5OB;89.66;50'16'361N,17'13'408E;;není možné podle pravidel bodovat
+8;0;31.10.2018;78.4;50'13'949N,17'09'597E;;OK-3888;Duo Discus XL(T);Jičín;Miloš Pajr;polygon s 5OB;22.74;50'09'377N,17'08'451E;;není možné podle pravidel bodovat
+9;0;31.10.2018;116.8;50'18'372N,17'18'783E;;OK-3888;Duo Discus XL(T);Jičín;Miloš Pajr;polygon s 5OB;81.76;50'15'619N,17'15'017E;;není možné podle pravidel bodovat
+10;0;01.11.2018;585.6;50'17'424N,17'18'270E;Bela;OK-3888;Duo Discus XL(T);Jičín;Miloš Pajr;polygon s 5OB;86.64;50'09'633N,17'11'483E;Bela;volný let na vzdálenost
+11;0;01.11.2018;198.4;50'36'396N,15'39'535E;;OK A802;TST-10M Atlas;Vrchlabí;Mirek Soukup;polygon s 5OB;49.79;50'43'619N,15'42'976E;;není možné podle pravidel bodovat
+12;0;01.11.2018;191;50'19'730N,17'20'807E;;OK-6610;SZD-36 Cobra 15;Raná;Tomáš Mezera;polygon s 5OB;63.71;50'15'890N,17'13'289E;;není možné podle pravidel bodovat
+13;0;31.10.2018;53.4;50'17'979N,17'17'581E;;OK-6610;SZD-36 Cobra 15;Raná;Tomáš Mezera;polygon s 5OB;15.11;50'09'368N,17'07'484E;;není možné podle pravidel bodovat
+14;0;01.11.2018;248.3;50'18'100N,17'17'850E;;OK-3103;Phoebus A1;Medlánky;Petr Jedlička;polygon s 5OB;72.25;50'09'617N,17'11'867E;;rychlostní let se změnou tratě za letu
+15;0;01.11.2018;110.2;50'18'575N,17'18'821E;;OM-6505;VSO-10;Žilina;Peter Šamaj ml.;polygon s 5OB;35.36;50'18'169N,17'09'457E;;není možné podle pravidel bodovat
+16;0;01.11.2018;109.1;48'27'656N,17'31'713E;;OM 1367;Std. Cirrus;Holíč;Juraj Sidor;polygon s 5OB;31.9;48'28'014N,17'26'080E;;volný let na vzdálenost
+17;0;22.10.2018;17.9;50'04'548N,17'41'499E;;OK-3892;ASW-19B;Jihlava;David Zouhar;polygon s 5OB;14.08;50'05'683N,17'35'303E;;není možné podle pravidel bodovat
+18;0;25.10.2018;30.2;50'00'455N,17'18'427E;;OK-3892;ASW-19B;Jihlava;David Zouhar;polygon s 5OB;31.98;50'01'607N,17'19'333E;;není možné podle pravidel bodovat
+19;0;01.11.2018;656.9;50'03'649N,17'37'090E;;OK-3892;ASW-19B;Jihlava;David Zouhar;polygon s 5OB;100.55;50'02'999N,17'23'683E;;rychlostní let se změnou tratě za letu
+20;0;01.11.2018;351.6;50'18'100N,17'17'850E;;OM-7272;Centrair C-101A Pegase;Žilina;Milan Surovčík ml.;polygon s 3OB;104.79;50'10'733N,17'11'717E;;rychlostní let se změnou tratě za letu
+21;0;01.11.2018;567.7;50'03'167N,17'35'700E;;OK-0976;Std. Cirrus;Hodkovice;Jan Zahrádka;polygon s 5OB;81.61;50'03'000N,17'23'683E;;rychlostní let podle deklarace
+22;0;01.11.2018;705.1;50'02'288N,17'44'980E;;OK-5555;Duo Discus (T) (700kg);Plzeň-Letkov;Jakub Hlaváček;polygon s 5OB;104.76;50'06'117N,17'17'507E;;není možné podle pravidel bodovat
+23;0;01.11.2018;109.3;50'33'914N,16'21'138E;;OK-4981;Nimbus-2(b);Broumov;Václav Kult;polygon s 5OB;37.52;50'33'558N,16'21'991E;;není možné podle pravidel bodovat
+24;0;01.11.2018;339.8;50'04'231N,17'18'248E;;OK-7980;ASW-19B;Zbraslavice;Bára Moravcová;polygon s 3OB;107.03;50'04'231N,17'18'248E;;rychlostní let se změnou tratě za letu
+25;0;01.11.2018;178.3;50'18'538N,17'18'487E;;0K 1066;DG-1000S 18m;Vyškov;Tomaš Přikryl;polygon s 5OB;47.73;50'16'312N,17'13'317E;;není možné podle pravidel bodovat
+26;0;01.11.2018;178.3;50'18'538N,17'18'487E;;0K 2620;DG-1000S 18m;Vyškov;Tomaš Přikryl;polygon s 5OB;47.73;50'16'312N,17'13'317E;;není možné podle pravidel bodovat
+27;0;01.11.2018;565.6;50'02'233N,17'35'917E;;OK3907;Std. Cirrus;Zbraslavice;Jan Ratz;polygon s 5OB;82.62;50'03'000N,17'23'683E;;rychlostní let podle deklarace
+28;0;01.11.2018;535.2;50'13'667N,17'11'583E;;OK-1773;ASW-19B;Vyškov;Jiří Koudela;polygon s 5OB;93.53;50'09'617N,17'11'867E;;rychlostní let podle deklarace
+29;0;31.10.2018;46.4;50'18'269N,17'18'138E;;OK 1834;ASK-21;Plasy;Roman Šlapáček;polygon s 5OB;16.23;50'10'860N,17'08'774E;;není možné podle pravidel bodovat
+30;0;01.11.2018;75.6;50'19'538N,17'18'344E;;OK 1834;ASK-21;Plasy;Roman Šlapáček;polygon s 5OB;28.25;50'17'408N,17'15'724E;;není možné podle pravidel bodovat
+31;0;01.11.2018;52.8;48'16'448N,18'07'338E;;OM-6600;LS-6;Nitra;Viliam Tutko;polygon s 5OB;28.42;48'18'610N,18'08'390E;;není možné podle pravidel bodovat
+32;0;01.11.2018;235.2;50'06'120N,17'42'625E;;OK-7000;Discus 2a /15m;Břeclav;Jan Viskot;polygon s 5OB;67.46;50'05'983N,17'16'797E;;není možné podle pravidel bodovat
+33;0;01.11.2018;643.9;50'02'233N,17'35'917E;;OK-7986;ASW-15B;Tábor;Jan Hruška;polygon s 5OB;89.75;50'03'000N,17'23'683E;;rychlostní let se změnou tratě za letu
+34;0;01.11.2018;64.1;50'19'048N,17'16'823E;;OK-6999;L-13 Blaník;Žamberk;Miroslav Ježek;polygon s 5OB;24.87;50'14'072N,17'08'807E;;není možné podle pravidel bodovat
+35;0;01.11.2018;217.8;50'18'356N,17'25'240E;;OK-3755;ASW-19;Zbraslavice;Jan Smékal;2OB;61.45;50'03'000N,17'23'683E;;volný let na vzdálenost
+36;0;01.11.2018;104.1;48'27'648N,17'32'036E;;OK-3706;Std. Cirrus;Holíč;Viktor Hnáta;polygon s 5OB;34.87;48'27'634N,17'26'649E;;není možné podle pravidel bodovat
+37;0;01.11.2018;355.5;50'03'000N,17'23'683E;;OK-9841;Duo Discus X(T);Vysoké Mýto;Jan Vavřín;polygon s 3OB;91.97;50'06'617N,17'16'517E;;rychlostní let se změnou tratě za letu
+38;0;01.11.2018;461.2;50'03'650N,17'37'083E;;OK-0808;LS-8b /15m;Raná;Hana Trešlová;polygon s 5OB;81.61;50'03'000N,17'23'683E;;rychlostní let se změnou tratě za letu
+39;0;31.10.2018;117;50'17'969N,17'19'653E;;OK - 0550;Ventus 2cxm/t /18m 565kg;Žamberk;Miroslav Koci;polygon s 5OB;51.11;50'11'625N,17'10'340E;;není možné podle pravidel bodovat
+40;0;31.10.2018;54.4;50'18'842N,17'19'819E;;OM_1111;ASW-20 C(L) /15m;Žilina;Stanislav Chupáň;polygon s 5OB;25.92;50'10'351N,17'08'422E;;není možné podle pravidel bodovat
+41;0;31.10.2018;38.9;50'18'397N,17'18'515E;;OM_1111;ASW-20 C(L) /15m;Žilina;Peter Šamaj;polygon s 5OB;33.11;50'12'617N,17'07'011E;;není možné podle pravidel bodovat
+42;0;31.10.2018;42.5;50'18'407N,17'19'154E;;OK-3103;Phoebus A1;Medlánky;Petr Jedlička;polygon s 5OB;25.92;50'10'335N,17'07'864E;;není možné podle pravidel bodovat
+43;0;31.10.2018;93.4;49'53'564N,17'38'719E;;OK-2977;ASG-29(E) 18m;Hranice;Radek Krejčiřík;polygon s 5OB;41.12;50'04'340N,17'32'403E;;není možné podle pravidel bodovat
+44;0;31.10.2018;79.9;50'18'619N,17'18'947E;;D-0281;Glasflügel 401;FC Langhennersdorf;Uwe Schlenker;polygon s 5OB;29.89;50'07'897N,17'11'168E;;není možné podle pravidel bodovat
+45;0;30.10.2018;87.3;48'16'286N,18'07'975E;;OM-2512;VSO-10;Nitra;Eva Jančiová;polygon s 5OB;27.78;48'19'220N,18'07'138E;;není možné podle pravidel bodovat
+46;0;30.10.2018;201.9;48'15'617N,18'06'083E;;OM-8888;LS-8s(t) /18m;Nitra;Dominik Jančík;polygon s 5OB;80.31;48'19'283N,18'02'867E;;rychlostní let podle deklarace
+47;0;30.10.2018;522.2;32'12'449S,148'14'421E;;VH-GFV;Discus b +W;Toužim;Pavel Jiránek;polygon s 5OB;86.64;32'13'558S,148'16'312E;;není možné podle pravidel bodovat
+48;0;29.10.2018;114.5;48'16'542N,18'06'722E;;OM-8800;DG-1000S 20m;Nitra;Peter Hupka;polygon s 5OB;46.84;48'20'089N,18'07'390E;;není možné podle pravidel bodovat
+49;0;29.10.2018;198.7;48'16'767N,18'07'967E;;OM-8888;LS-8s(t) /18m;Nitra;Dominik Jančík;polygon s 5OB;56.24;48'19'283N,18'02'867E;;rychlostní let podle deklarace
+50;0;27.10.2018;124.3;50'04'620N,17'42'077E;;D-5335;Ventus a /15m WL 500kg;Raná;Ondřej Dvořák;polygon s 5OB;63.05;50'04'975N,17'23'884E;;není možné podle pravidel bodovat
+51;0;27.10.2018;324.6;50'19'208N,17'18'361E;;OK-2345;Duo Discus X(T);VAP;Kristina Šantrůčková;polygon s 5OB;82.28;50'09'800N,17'29'239E;;není možné podle pravidel bodovat
+52;0;27.10.2018;115.9;50'04'014N,17'46'026E;;OK-5555;Duo Discus X(T);Křižanov;Zuzana Kutílková;polygon s 5OB;59.95;50'07'577N,17'25'208E;;není možné podle pravidel bodovat
+53;0;27.10.2018;503.6;50'08'678N,17'13'699E;;OK-3888;Duo Discus XL(T);Jičín;Miloš Pajr;polygon s 5OB;131.37;50'14'047N,17'13'334E;;není možné podle pravidel bodovat
+54;0;26.10.2018;80.2;50'04'792N,17'44'141E;;OK-4902;Std. Cirrus;Mladá Boleslav;Vojtěch Hájek;polygon s 5OB;20.51;50'02'951N,17'19'224E;;není možné podle pravidel bodovat
+55;0;27.10.2018;48.8;50'04'517N,17'41'606E;;OK-1948;Janus c/cM/cT;Křižanov;Karel Elsnic;polygon s 5OB;51.47;50'06'680N,17'23'878E;;není možné podle pravidel bodovat
+56;0;27.10.2018;123.2;50'04'951N,17'41'728E;;OK-0007;Ventus 2a /15m;Hranice;Radek Krejčiřík;polygon s 3OB;56.7;50'06'617N,17'16'517E;;volný let na vzdálenost
+57;0;27.10.2018;13.4;50'06'957N,17'20'821E;;OK7677;Std. Cirrus;Krnov;Jan Pláteník;polygon s 5OB;34.96;50'05'843N,17'20'815E;;není možné podle pravidel bodovat
+58;0;27.10.2018;118.4;50'05'264N,17'41'605E;;OK-3740;Std. Cirrus;Křižanov;Jan Pavlik;polygon s 5OB;49.45;50'02'000N,17'18'817E;;volný let na vzdálenost
+59;0;27.10.2018;44.6;50'04'404N,17'42'359E;;OK-0808;LS-8b /15m;Raná;Hana Trešlová;polygon s 5OB;39.95;50'04'354N,17'21'277E;;není možné podle pravidel bodovat
+60;0;27.10.2018;64.8;50'04'449N,17'41'598E;;OK-6492;Std. Cirrus;Křižanov;Michal Navrátil;polygon s 5OB;32.28;50'04'897N,17'22'342E;;není možné podle pravidel bodovat
+61;0;27.10.2018;26.7;50'06'478N,17'19'109E;;OK-0696;Std. Cirrus;Slaný;Kateřina Vojtová;polygon s 5OB;37.75;50'04'744N,17'22'553E;;není možné podle pravidel bodovat
+62;0;27.10.2018;78.9;50'04'421N,17'42'851E;;OK-0971;Std. Cirrus;Slaný;Jiří Hůla;polygon s 5OB;46.1;50'03'770N,17'35'817E;;není možné podle pravidel bodovat
+63;0;26.10.2018;96.3;50'04'533N,17'43'385E;;OK-1948;Janus c/cM/cT;Křižanov;Martin Piskáček;polygon s 5OB;67.95;50'05'026N,17'27'685E;;není možné podle pravidel bodovat
+64;0;26.10.2018;71.4;50'04'527N,17'42'661E;;OK-0976;Std. Cirrus;Hodkovice;Jan Zahrádka;polygon s 5OB;32.7;50'03'449N,17'33'884E;;není možné podle pravidel bodovat
+65;0;26.10.2018;93.2;50'04'619N,17'43'716E;;OK-1948;Janus c/cM/cT;Křižanov;Karel Elsnic;polygon s 5OB;18.03;50'01'092N,17'19'034E;;není možné podle pravidel bodovat
+66;0;26.10.2018;107;50'04'521N,17'43'255E;;OK-5555;Duo Discus (T) (700kg);Hranice;Radek Krejčiřík;polygon s 5OB;57.63;50'05'063N,17'30'602E;;není možné podle pravidel bodovat
+67;0;26.10.2018;80.2;50'04'744N,17'42'427E;;OK-9841;Duo Discus (T) (700kg);Křižanov;Michal Navrátil;polygon s 5OB;30.93;50'04'138N,17'32'158E;;není možné podle pravidel bodovat
+68;0;26.10.2018;214.3;50'18'453N,17'19'318E;;;Ventus 2cxm/t /18m 565kg;Žamberk;Miroslav Koci;polygon s 5OB;41.02;50'08'073N,17'13'947E;;není možné podle pravidel bodovat
+69;0;26.10.2018;88.1;50'17'904N,17'19'738E;;OK-2016;Duo Discus X(T);Šumperk;Marek Blaťák;polygon s 5OB;33.29;50'16'835N,17'09'976E;;není možné podle pravidel bodovat
+70;0;26.10.2018;92.1;50'05'046N,17'42'920E;;3907;Std. Cirrus;Zbraslavice;Martin Grmela;polygon s 5OB;21.54;50'03'530N,17'19'433E;;není možné podle pravidel bodovat
+71;0;25.10.2018;68.1;50'04'491N,17'42'632E;;3907;Std. Cirrus;Zbraslavice;Martin Grmela;polygon s 5OB;56.57;50'04'554N,17'32'634E;;není možné podle pravidel bodovat
+72;0;23.10.2018;84.9;50'04'809N,17'42'442E;;3907;Std. Cirrus;Zbraslavice;Martin Grmela;polygon s 5OB;35.11;50'06'428N,17'19'000E;;není možné podle pravidel bodovat
+73;0;26.10.2018;94.7;50'04'656N,17'39'520E;;OK-7980;ASW-19B;Zbraslavice;Bára Moravcová;polygon s 5OB;19.71;50'03'530N,17'18'748E;;není možné podle pravidel bodovat
+74;0;26.10.2018;67.7;50'02'625N,17'17'038E;;OK-2345;Duo Discus X(T);VAP;Kristina Šantrůčková;polygon s 5OB;22.35;50'04'047N,17'16'911E;;není možné podle pravidel bodovat
+75;0;25.10.2018;28.9;50'07'770N,17'30'353E;;OK-2345;Duo Discus X(T);VAP;Kristina Šantrůčková;polygon s 5OB;52.02;50'09'256N,17'33'404E;;není možné podle pravidel bodovat
+76;0;26.10.2018;122.8;50'05'063N,17'40'308E;;OK-7237;G-102 Astir cs;Krnov;Daniel Rosa;polygon s 5OB;36.01;50'02'616N,17'17'803E;;není možné podle pravidel bodovat
+77;0;26.10.2018;80.9;50'05'172N,17'41'013E;;OK-4522;VSO-10;Krnov;Petr Kramář;polygon s 5OB;14.19;50'01'550N,17'22'246E;;není možné podle pravidel bodovat
+78;0;26.10.2018;138.7;50'04'390N,17'42'894E;;D-0456;ASW-15B;Vysoké Mýto;Jan Vavřín;polygon s 5OB;27.45;50'02'000N,17'18'816E;;volný let na vzdálenost
+79;0;26.10.2018;140.5;50'04'392N,17'43'203E;;OK-3740;Std. Cirrus;Křižanov;Jan Pavlik;polygon s 5OB;22.85;50'04'233N,17'18'250E;;volný let na vzdálenost
+80;0;26.10.2018;82.3;50'04'464N,17'42'470E;;OK-0808;LS-8b /15m;Raná;Hana Trešlová;polygon s 5OB;17;50'02'631N,17'19'433E;;není možné podle pravidel bodovat
+81;0;26.10.2018;88.3;50'04'472N,17'42'903E;;OK-0696;Std. Cirrus;Slaný;Kateřina Vojtová;polygon s 5OB;20.32;50'03'306N,17'21'444E;;není možné podle pravidel bodovat
+82;0;26.10.2018;90.2;50'04'592N,17'43'232E;;OK-0971;Std. Cirrus;Slaný;Jiří Hůla;polygon s 5OB;21.11;50'01'217N,17'20'737E;;není možné podle pravidel bodovat
+83;0;26.10.2018;99.9;50'04'900N,17'40'191E;;OK-3755;ASW-19;Zbraslavice;Jan Smékal;polygon s 5OB;29.13;50'02'712N,17'16'830E;;není možné podle pravidel bodovat
+84;0;26.10.2018;59;50'04'478N,17'42'528E;;OK-1981;DG-200 /15m;Mladá Boleslav;Martin Souček;polygon s 5OB;14.79;50'01'850N,17'18'334E;;není možné podle pravidel bodovat
+85;0;26.10.2018;72.2;50'04'780N,17'42'790E;;OK3154;ASW-20 (A)+F /15m;Zábřeh;Jaroslav Buryan;polygon s 5OB;17.85;50'02'250N,17'15'520E;;není možné podle pravidel bodovat
+86;0;25.10.2018;4;50'00'004N,17'19'439E;;OK-4902;Std. Cirrus;Křižanov;Martin Piskáček;polygon s 5OB;0;50'01'240N,17'20'026E;;není možné podle pravidel bodovat
+87;0;25.10.2018;40.2;49'59'344N,17'19'007E;;OK-6492;Std. Cirrus;Křižanov;Michal Navrátil;polygon s 5OB;50.46;50'06'061N,17'35'259E;;není možné podle pravidel bodovat
+88;0;25.10.2018;361.8;48'56'220N,20'35'625E;;OM9696;Discus 2c/2T /18m;Spišská Nová Ves;Maroš Divok;polygon s 5OB;71.81;49'04'583N,20'18'500E;;volný let na vzdálenost
+89;0;25.10.2018;122.6;50'11'018N,17'36'181E;;OK-9841;Duo Discus (T) (700kg);Vysoké Mýto;Jan Vavřín;polygon s 5OB;39.07;50'04'591N,17'34'134E;;není možné podle pravidel bodovat
+90;0;25.10.2018;53.9;49'59'104N,17'18'845E;;OK-5555;Duo Discus (T) (700kg);Krnov;Ondřej Bordovský;polygon s 5OB;29.33;50'05'098N,17'35'216E;;není možné podle pravidel bodovat
+91;0;25.10.2018;104.7;50'04'335N,17'42'329E;;OK-0976;Std. Cirrus;Hodkovice;Jan Zahrádka;polygon s 3OB;48.29;50'02'000N,17'18'817E;;volný let na vzdálenost
+92;0;25.10.2018;51.7;49'59'094N,17'17'388E;;OK-3755;ASW-19;Zbraslavice;Jan Smékal;polygon s 5OB;49.29;50'05'733N,17'32'520E;;není možné podle pravidel bodovat
+93;0;25.10.2018;30.5;50'04'508N,17'41'388E;;OK-1981;DG-200 /17m;Mladá Boleslav;Martin Souček;polygon s 5OB;30.53;50'05'013N,17'34'048E;;není možné podle pravidel bodovat
+94;0;25.10.2018;54.1;50'00'289N,17'18'502E;;OK-3740;Std. Cirrus;Křižanov;Jan Pavlik;polygon s 5OB;42.04;50'01'680N,17'34'321E;;není možné podle pravidel bodovat
+95;0;25.10.2018;62.6;50'04'464N,17'41'732E;;OK-1837;Ventus c /17,6m;Krnov;Jiří Bojko;polygon s 5OB;45.03;50'02'666N,17'23'494E;;není možné podle pravidel bodovat
+96;0;24.10.2018;196.7;57'03'769N,2'51'158W;;G-CLVO;SZD-54-2 Perkoz 17,5m;Plzeň-Letkov;Jakub Hlaváček;polygon s 5OB;89.27;57'05'577N,2'56'673W;;není možné podle pravidel bodovat
+97;0;23.10.2018;178.4;49'56'407N,15'33'097E;;OK-8510;VSO-10;VAP;Martin Stránský;polygon s 5OB;53.75;49'54'598N,15'33'769E;;není možné podle pravidel bodovat
+98;0;23.10.2018;165.8;49'55'983N,15'32'550E;;OK-3510;VSO-10;VAP;Oldřich Zumr;polygon s 5OB;96.08;49'55'983N,15'32'550E;;rychlostní let podle deklarace
+99;0;23.10.2018;126.8;49'43'356N,15'46'202E;;OK-6744;ASW-20 (A)+F /15m;VAP;Jan Černý;polygon s 3OB;100.06;49'43'356N,15'46'202E;;rychlostní let se změnou tratě za letu
