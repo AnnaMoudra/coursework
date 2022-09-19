@@ -31,9 +31,8 @@ coursework
 |   └─── 03 - datamart & dashboard
 |
 └───MVI_ADM (machine learning courses) 
-|   |   README.md
 |   |
-|   └───mvi coursework
+|   └───mvi semestral project - video FR upscaling w/ NN
 |   └───adm home assignments
 |
 └───PDD (basic data processing course)
@@ -42,9 +41,9 @@ coursework
 |   └─── 02
 |   └─── 03
 |
-└───ROZ (computer vision course)
+└───ROZ (computer vision course) -> moved to its own repository
 |   |   README.md
-|   └───iris classifier (gabor features)
+|   └───iris classifier (gabor features) 
 |
 └───SPI (statistics home assignments)
 │   │   README.md
@@ -53,8 +52,8 @@ coursework
 |
 └───VZD (basic data mining course)
     │   README.md
-    └─── 01
-    └─── 02
-    └─── 03
-    └─── 04
+    └─── 01 - web scraping 
+    └─── 02 - data preprocessing and binary classification
+    └─── 03 - e-shop customers clustering
+    └─── 04 - regression
 ```
