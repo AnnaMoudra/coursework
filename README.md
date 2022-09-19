@@ -1,7 +1,7 @@
 # University coursework selection
-## Masters program at FIT CTU, years 2019-2021
+### Masters program at FIT CTU, years 2019-2021
 
-
+The selection of code published is migrated from my university gitlab account.
 ```
 coursework
 │   README.md
@@ -12,7 +12,7 @@ coursework
 |   └─── 02 - index & document retrieval
 |   └─── 03 - text mining
 |   └─── 04 - social network analysis
-|   └─── 05 - web analytics
+|   └─── 05 - web analytics //not added
 |   └─── 06 - recommender systems
 |
 └───DZO (image processing course)
