@@ -1,0 +1,1077 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+\documentclass[11pt]{article}
+    \usepackage[T1]{fontenc}
+    % Nicer default font (+ math font) than Computer Modern for most use cases
+    \usepackage{mathpazo}
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % We will generate all images so they have a width \maxwidth. This means
+    % that they will get their normal width if they fit onto the page, but
+    % are scaled down if they would overflow the margins.
+    \makeatletter
+    \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
+    \else\Gin@nat@width\fi}
+    \makeatother
+    \let\Oldincludegraphics\includegraphics
+    % Set max figure width to be 80% of text width, for now hardcoded.
+    \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=.8\maxwidth]{#1}}
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+
+    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage[utf8]{inputenc}% Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    \usepackage{mathrsfs}
+    \usepackage[english]{babel}
+    \selectlanguage{english}
+  
+    
+
+
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+    \definecolor{ansi-default-inverse-fg}{HTML}{FFFFFF}
+    \definecolor{ansi-default-inverse-bg}{HTML}{000000}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatibility definitions
+    \def\gt{>}
+    \def\lt{<}
+    \let\Oldtex\TeX
+    \let\Oldlatex\LaTeX
+    \renewcommand{\TeX}{\textrm{\Oldtex}}
+    \renewcommand{\LaTeX}{\textrm{\Oldlatex}}
+    % Document parameters
+    % Document title
+    \title{MI-SPI Domácí úkol 1}
+    
+    
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@ch\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@dl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@sa\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@vm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@cpf\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@fm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+
+    \begin{document}
+    
+    
+    \maketitle
+
+\paragraph{Skupina:}\label{skupina}
+
+\begin{verbatim}
+- Anna Moudrá (moudrann, paralelka 102) - reprezentant
+- Vojtěch Polcar (polcavoj, paralelka 108)
+\end{verbatim}
+
+\noindent
+Nejprve určíme parametry pro výpočet hodnot, které určí soubory pro
+vypracování úkolů.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+        \PY{k+kn}{from} \PY{n+nn}{scipy} \PY{k}{import} \PY{n}{stats}
+        \PY{k+kn}{from} \PY{n+nn}{scipy}\PY{n+nn}{.}\PY{n+nn}{optimize} \PY{k}{import} \PY{n}{minimize}
+        \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k}{as} \PY{n+nn}{pd}
+        \PY{k+kn}{import} \PY{n+nn}{seaborn} \PY{k}{as} \PY{n+nn}{sns}
+        \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
+        \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{k} \PY{o}{=} \PY{l+m+mi}{16}
+        \PY{n}{l} \PY{o}{=} \PY{l+m+mi}{6}
+        \PY{n}{x} \PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{n}{k}\PY{o}{*}\PY{n}{l}\PY{o}{*}\PY{l+m+mi}{23}\PY{p}{)} \PY{o}{\PYZpc{}} \PY{l+m+mi}{20} \PY{p}{)} \PY{o}{+}\PY{l+m+mi}{1}
+        \PY{n}{y} \PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{n}{x} \PY{o}{+} \PY{p}{(}\PY{p}{(}\PY{n}{k}\PY{o}{*}\PY{l+m+mi}{5} \PY{o}{+} \PY{n}{l}\PY{o}{*}\PY{l+m+mi}{7}\PY{p}{)} \PY{o}{\PYZpc{}} \PY{l+m+mi}{19}\PY{p}{)} \PY{p}{)} \PY{o}{\PYZpc{}} \PY{l+m+mi}{20} \PY{p}{)} \PY{o}{+} \PY{l+m+mi}{1}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{str\PYZus{}X} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{3} \PY{o}{\PYZhy{}} \PY{n+nb}{len}\PY{p}{(}\PY{n+nb}{str}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{0}\PY{l+s+s1}{\PYZsq{}}\PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n}{x}\PY{p}{)} \PY{o}{+} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{.txt}\PY{l+s+s1}{\PYZsq{}}
+        \PY{n}{str\PYZus{}Y} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{3} \PY{o}{\PYZhy{}} \PY{n+nb}{len}\PY{p}{(}\PY{n+nb}{str}\PY{p}{(}\PY{n}{y}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{0}\PY{l+s+s1}{\PYZsq{}}\PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n}{y}\PY{p}{)} \PY{o}{+} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{.txt}\PY{l+s+s1}{\PYZsq{}}
+        
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Text X:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{str\PYZus{}X}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Text Y:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{str\PYZus{}Y}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+	Text X: 009.txt
+	Text Y: 018.txt
+
+    \end{Verbatim}
+
+    \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section*{1. Z obou datových souborů načtěte texty k analýze. Pro
+každý text zvlášť odhadněte základní charakteristiky délek slov, tj.
+střední hodnotu a rozptyl. Graficky znázorněte rozdělení délek
+slov.}\label{z-obou-datovuxfdch-souborux16f-naux10dtux11bte-texty-k-analuxfdze.-pro-kaux17eduxfd-text-zvluxe1ux161ux165-odhadnux11bte-zuxe1kladnuxed-charakteristiky-duxe9lek-slov-tj.-stux159ednuxed-hodnotu-a-rozptyl.-graficky-znuxe1zornux11bte-rozdux11blenuxed-duxe9lek-slov.}
+
+Oba texty nejprve načteme a poté rozdělíme na jednotlivá slova. Z délek
+těchto slov následně vypočítáme odhad střední hodnoty délky slova pomocí
+vzorce: \[\overline{X}=\frac{1}{n}\displaystyle\sum_{i=1}^{n}X_{i}\] Pro
+výpočet bodového odhadu rozptylu jednotlivých délek slov použijeme
+vzorec: \[s^{2}=\frac{1}{n-1}\sum_{i=1}^{n} (X_i - \overline{X})^{2} \]
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{f} \PY{o}{=} \PY{n+nb}{open}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{./hw1\PYZhy{}source/}\PY{l+s+s1}{\PYZsq{}}\PY{o}{+}\PY{n}{str\PYZus{}X}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{X\PYZus{}info} \PY{o}{=} \PY{n}{f}\PY{o}{.}\PY{n}{readline}\PY{p}{(}\PY{p}{)}
+        \PY{n}{data\PYZus{}X} \PY{o}{=} \PY{n}{f}\PY{o}{.}\PY{n}{read}\PY{p}{(}\PY{p}{)}
+        \PY{n}{f}\PY{o}{.}\PY{n}{close}\PY{p}{(}\PY{p}{)}
+        
+        \PY{n}{f} \PY{o}{=} \PY{n+nb}{open}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{./hw1\PYZhy{}source/}\PY{l+s+s1}{\PYZsq{}}\PY{o}{+}\PY{n}{str\PYZus{}Y}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{Y\PYZus{}info} \PY{o}{=} \PY{n}{f}\PY{o}{.}\PY{n}{readline}\PY{p}{(}\PY{p}{)}
+        \PY{n}{data\PYZus{}Y} \PY{o}{=} \PY{n}{f}\PY{o}{.}\PY{n}{read}\PY{p}{(}\PY{p}{)}
+        \PY{n}{f}\PY{o}{.}\PY{n}{close}\PY{p}{(}\PY{p}{)}
+        
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Název prvního textu:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{X\PYZus{}info}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Název druhého textu:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{Y\PYZus{}info}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Název prvního textu: The Strange Case Of Dr. Jekyll And Mr. Hyde, by Robert Louis Stevenson
+Název druhého textu: Dracula, by Bram Stoker
+
+    \end{Verbatim}
+
+    \subsection*{Dataset X}\label{dataset-x}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{words\PYZus{}x} \PY{o}{=} \PY{n}{data\PYZus{}X}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)} \PY{c+c1}{\PYZsh{}rozdelime text na slova}
+        \PY{n}{lengths\PYZus{}x} \PY{o}{=} \PY{p}{[}\PY{n+nb}{len}\PY{p}{(}\PY{n}{x}\PY{p}{)} \PY{k}{for} \PY{n}{x} \PY{o+ow}{in} \PY{n}{words\PYZus{}x}\PY{p}{]} \PY{c+c1}{\PYZsh{}spocteme delky jednotlivych slov}
+        
+        \PY{n}{pd\PYZus{}x} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{p}{)} \PY{c+c1}{\PYZsh{}ulozime obe hodnoty do dataframu}
+        \PY{n}{pd\PYZus{}x}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{len}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{lengths\PYZus{}x}
+        \PY{n}{pd\PYZus{}x}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{words}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{words\PYZus{}x}
+        
+        \PY{n}{EX} \PY{o}{=} \PY{l+m+mi}{1}\PY{o}{/}\PY{n+nb}{len}\PY{p}{(}\PY{n}{words\PYZus{}x}\PY{p}{)}\PY{o}{*}\PY{n+nb}{sum}\PY{p}{(}\PY{n}{lengths\PYZus{}x}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Odhad střední hodnoty EX:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{EX}\PY{p}{)}
+        
+        \PY{n}{varX} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{words\PYZus{}x}\PY{p}{)} \PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{n+nb}{sum}\PY{p}{(}\PY{p}{[}\PY{p}{(}\PY{n}{x} \PY{o}{\PYZhy{}} \PY{n}{EX}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{k}{for} \PY{n}{x} \PY{o+ow}{in} \PY{n}{lengths\PYZus{}x}\PY{p}{]}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Bodový odhad rozptylu var(X):}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{varX}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Odhad střední hodnoty EX: 4.2622641509433965
+Bodový odhad rozptylu var(X): 4.99064264970511
+    \end{Verbatim}
+
+    \subsection*{Dataset Y}\label{dataset-y}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{words\PYZus{}y} \PY{o}{=} \PY{n}{data\PYZus{}Y}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{lengths\PYZus{}y} \PY{o}{=} \PY{p}{[}\PY{n+nb}{len}\PY{p}{(}\PY{n}{x}\PY{p}{)} \PY{k}{for} \PY{n}{x} \PY{o+ow}{in} \PY{n}{words\PYZus{}y}\PY{p}{]}
+        
+        \PY{n}{pd\PYZus{}y} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{p}{)}
+        \PY{n}{pd\PYZus{}y}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{len}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{lengths\PYZus{}y}
+        \PY{n}{pd\PYZus{}y}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{words}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{words\PYZus{}y}
+        
+        \PY{n}{EY} \PY{o}{=} \PY{l+m+mi}{1}\PY{o}{/}\PY{n+nb}{len}\PY{p}{(}\PY{n}{words\PYZus{}y}\PY{p}{)}\PY{o}{*}\PY{n+nb}{sum}\PY{p}{(}\PY{n}{lengths\PYZus{}y}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Odhad střední hodnoty EY:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{EY}\PY{p}{)}
+        
+        \PY{n}{varY} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{words\PYZus{}y}\PY{p}{)} \PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{n+nb}{sum}\PY{p}{(}\PY{p}{[}\PY{p}{(}\PY{n}{x} \PY{o}{\PYZhy{}} \PY{n}{EY}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{k}{for} \PY{n}{x} \PY{o+ow}{in} \PY{n}{lengths\PYZus{}y}\PY{p}{]}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Bodový odhad rozptylu var(Y):}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{varY}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Odhad střední hodnoty EY: 4.214814814814815
+Bodový odhad rozptylu var(Y): 4.932495795146393
+    \end{Verbatim}
+
+    \paragraph{Grafické znázornění rozdělení délek slov v datasetech X a
+Y.}\label{grafickuxe9-znuxe1zornux11bnuxed-rozdux11blenuxed-duxe9lek-slov-v-datasetech-x-a-y.}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{colors} \PY{o}{=} \PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZsh{}3778bf}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZsh{}feb308}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}8}]:} \PY{n}{pd\PYZus{}xy} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{pd\PYZus{}x}\PY{p}{)}
+        \PY{n}{pd\PYZus{}xy}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{type}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{X}\PY{l+s+s1}{\PYZsq{}}
+        \PY{n}{pd\PYZus{}xy} \PY{o}{=} \PY{n}{pd\PYZus{}xy}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{pd\PYZus{}y}\PY{p}{,} \PY{n}{sort}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}
+        \PY{n}{pd\PYZus{}xy}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{type}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{fillna}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Y}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{inplace}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+        
+        \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{14}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
+        \PY{n}{cnt} \PY{o}{=} \PY{n}{sns}\PY{o}{.}\PY{n}{countplot}\PY{p}{(}\PY{n}{x} \PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{len}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{hue}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{type}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{data}\PY{o}{=}\PY{n}{pd\PYZus{}xy}\PY{p}{,} \PY{n}{palette}\PY{o}{=}\PY{n}{colors}\PY{p}{,} \PY{n}{saturation}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+        \PY{n}{ey} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{vlines}\PY{p}{(}\PY{n}{x}\PY{o}{=}\PY{n}{EY}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{ymin}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{ymax}\PY{o}{=}\PY{l+m+mi}{250}\PY{p}{,} \PY{n}{linestyles}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{dashed}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{orangered}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{ex} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{vlines}\PY{p}{(}\PY{n}{x}\PY{o}{=}\PY{n}{EX}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{ymin}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{ymax}\PY{o}{=}\PY{l+m+mi}{250}\PY{p}{,} \PY{n}{linestyles}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{dashed}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{darkblue}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Rozdělení délek slov v textech X a Y}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{délka slova}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{,}\PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{počet slov}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{legend1} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{n}{loc}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{upper right}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{[}\PY{n}{ex}\PY{p}{,}\PY{n}{ey}\PY{p}{]}\PY{p}{,}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{EX}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{EY}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{)}\PY{p}{,}\PY{n}{plt}\PY{o}{.}\PY{n}{gca}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{add\PYZus{}artist}\PY{p}{(}\PY{n}{legend1}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_13_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    \paragraph{Diskuze k výsledku}\label{diskuze-k-vuxfdsledku}
+
+Texty z obou vybraných knih jsou z konce 19. století od autorů z
+Britských ostrovů. Můžeme očekávat, že rozdělení slov a jejich použití
+bude podobné. Tuto skutečnost nám potvrzuje odhad střední hodnoty a
+rozptylu a následné grafické zobrazení délek slov. V něm vidíme, že
+jediný větší rozdíl nastává u slov délek 3 a 4.
+
+    \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section*{2. Pro každý text zvlášť odhadněte pravděpodobnosti
+písmen (symbolů mimo mezery), které se v textech vyskytují. Výsledné
+pravděpodobnosti graficky
+znázorněte.}\label{pro-kaux17eduxfd-text-zvluxe1ux161ux165-odhadnux11bte-pravdux11bpodobnosti-puxedsmen-symbolux16f-mimo-mezery-kteruxe9-se-v-textech-vyskytujuxed.-vuxfdslednuxe9-pravdux11bpodobnosti-graficky-znuxe1zornux11bte.}
+
+    Pravděpodobnosti výskytu jednotlivých písmen získáme tak, že nejdříve z
+textů odstraníme všechny mezery a nasčítáme počet jednotlivých písmen v
+textech.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{x\PYZus{}nospaces} \PY{o}{=} \PY{n}{data\PYZus{}X}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{y\PYZus{}nospaces} \PY{o}{=} \PY{n}{data\PYZus{}Y}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}10}]:} \PY{n}{x\PYZus{}uni} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n+nb}{list}\PY{p}{(}\PY{n}{x\PYZus{}nospaces}\PY{p}{[}\PY{p}{:}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+         \PY{n}{x\PYZus{}uni} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{n}{x\PYZus{}uni}\PY{p}{,} \PY{n}{return\PYZus{}counts}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{x\PYZus{}uni}\PY{p}{)}
+         
+         \PY{n}{y\PYZus{}uni} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n+nb}{list}\PY{p}{(}\PY{n}{y\PYZus{}nospaces}\PY{p}{[}\PY{p}{:}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+         \PY{n}{y\PYZus{}uni} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{n}{y\PYZus{}uni}\PY{p}{,} \PY{n}{return\PYZus{}counts}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{y\PYZus{}uni}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+(array(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+       'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y'],
+      dtype='<U1'), array([366,  65, 105, 205, 561, 102,  87, 276, 279,   7,  37, 194, 109,
+       344, 357,  65,   8, 260, 284, 447, 111,  34, 118,   2,  95]))
+(array(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+       'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],
+      dtype='<U1'), array([391,  69,  94, 171, 542, 104,  96, 281, 300,   6,  45, 169, 136,
+       278, 341,  72,   4, 299, 290, 468, 117,  52, 118,   8,  96,   5]))
+
+    \end{Verbatim}
+
+    Následně výsledné součty (x\_uni a y\_uni) vydělíme celkovým počtem
+všech písmen (pro každý text zvlášť).
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}11}]:} \PY{n}{chars\PYZus{}xy} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{p}{)}
+         \PY{n}{chars\PYZus{}xy}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{char}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{x\PYZus{}uni}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+         \PY{n}{chars\PYZus{}xy}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{count}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{x\PYZus{}uni}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}
+         \PY{n}{chars\PYZus{}xy}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{prob}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{chars\PYZus{}xy}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{count}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{/}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{n}{x\PYZus{}uni}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+         \PY{n}{chars\PYZus{}xy}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{type}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{X}\PY{l+s+s1}{\PYZsq{}}
+         \PY{n}{chars\PYZus{}tmp} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{p}{)}
+         \PY{n}{chars\PYZus{}tmp}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{char}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{y\PYZus{}uni}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+         \PY{n}{chars\PYZus{}tmp}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{count}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{y\PYZus{}uni}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}
+         \PY{n}{chars\PYZus{}tmp}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{prob}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{chars\PYZus{}tmp}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{count}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{/}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{n}{y\PYZus{}uni}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+         \PY{n}{chars\PYZus{}xy} \PY{o}{=} \PY{n}{chars\PYZus{}xy}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{chars\PYZus{}tmp}\PY{p}{,} \PY{n}{sort}\PY{o}{=}\PY{k+kc}{False}\PY{p}{)}
+         \PY{n}{chars\PYZus{}xy}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{type}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{fillna}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Y}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}  \PY{n}{inplace}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}12}]:} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{14}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
+         \PY{n}{sns}\PY{o}{.}\PY{n}{barplot}\PY{p}{(}\PY{n}{x}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{char}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{y}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{prob}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{hue}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{type}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{data}\PY{o}{=}\PY{n}{chars\PYZus{}xy}\PY{p}{,} 
+         			\PY{n}{palette}\PY{o}{=}\PY{n}{colors}\PY{p}{,} \PY{n}{saturation}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Rozdělení znaků v textech X a Y}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{znak}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{,}\PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{pravděpodobnost výskytu}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{n}{loc}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{upper right}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_21_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    \paragraph{Diskuze k výsledku}\label{diskuze-k-vuxfdsledku}
+
+V grafu můžeme vidět výskyt pravděpodobnost výskytu písmen v
+jednotlivých textech. Protože se jedná o anglické texty ze stejného
+období, je i pravděpodobnost výskytu písmen velmi podobná. Nejčastějšími
+znaky v anglickém jazyce jsou písmena e, t, a - tuto skutečnost graf
+také potvrzuje.
+    \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}
+    \section*{Hypotézy}\label{hypotuxe9zy}
+\end{center}
+
+\section*{3. Na hladině významnosti 5\% otestujte hypotézu, že
+rozdělení délek slov nezávisí na tom, o který jde text. Určete také
+p-hodnotu
+testu.}\label{na-hladinux11b-vuxfdznamnosti-5-otestujte-hypotuxe9zu-ux17ee-rozdux11blenuxed-duxe9lek-slov-nezuxe1visuxed-na-tom-o-kteruxfd-jde-text.-urux10dete-takuxe9-p-hodnotu-testu.}
+
+V úloze si nejprve vytvoříme kontingenční tabulku z četností
+jednotlivých délek slov a poté provedeme\\ \(\chi^{2}\) nezávislosti. Na
+hladině významnosti \(5\%\) budeme testovat hypotézu: - Rozdělení se
+rovnají: \(H_0\): \(p_{i,j} = p_{i\bullet}p_{\bullet j}\)\\
+- Rozdělení jsou rozdílná: \(H_A\):
+\(p_{i,j} \neq p_{i\bullet}p_{\bullet j}\)
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}13}]:} \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Maximální délka slova v X:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{pd\PYZus{}xy}\PY{p}{[}\PY{n}{pd\PYZus{}xy}\PY{o}{.}\PY{n}{type} \PY{o}{==} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Y}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{o}{.}\PY{n}{len}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Maximální délká slova v Y:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{pd\PYZus{}xy}\PY{p}{[}\PY{n}{pd\PYZus{}xy}\PY{o}{.}\PY{n}{type} \PY{o}{==} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{X}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{o}{.}\PY{n}{len}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+         
+         \PY{n}{delky} \PY{o}{=} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n+nb}{max}\PY{p}{(}\PY{n}{pd\PYZus{}xy}\PY{p}{[}\PY{n}{pd\PYZus{}xy}\PY{o}{.}\PY{n}{type} \PY{o}{==} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Y}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{o}{.}\PY{n}{len}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)}\PY{p}{,}
+         		 \PY{n}{pd\PYZus{}xy}\PY{p}{[}\PY{n}{pd\PYZus{}xy}\PY{o}{.}\PY{n}{type} \PY{o}{==} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{X}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{o}{.}\PY{n}{len}\PY{o}{.}\PY{n}{max}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
+         
+         \PY{n}{textX} \PY{o}{=} \PY{p}{[}\PY{n}{pd\PYZus{}xy}\PY{p}{[}\PY{p}{(}\PY{n}{pd\PYZus{}xy}\PY{o}{.}\PY{n}{type} \PY{o}{==} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{X}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{pd\PYZus{}xy}\PY{o}{.}\PY{n}{len} \PY{o}{==} \PY{n}{i}\PY{p}{)}\PY{p}{]}\PY{o}{.}\PY{n}{count}\PY{p}{(}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n}{delky}\PY{p}{]}
+         \PY{n}{textY} \PY{o}{=} \PY{p}{[}\PY{n}{pd\PYZus{}xy}\PY{p}{[}\PY{p}{(}\PY{n}{pd\PYZus{}xy}\PY{o}{.}\PY{n}{type} \PY{o}{==} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Y}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)} \PY{o}{\PYZam{}} \PY{p}{(}\PY{n}{pd\PYZus{}xy}\PY{o}{.}\PY{n}{len} \PY{o}{==} \PY{n}{i}\PY{p}{)}\PY{p}{]}\PY{o}{.}\PY{n}{count}\PY{p}{(}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n}{delky}\PY{p}{]}
+         
+         \PY{n}{N} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{matrix}\PY{p}{(}\PY{p}{[}\PY{n}{textX}\PY{p}{,}\PY{n}{textY}\PY{p}{]}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Tabulka četností slov různých délek:}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{N}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Maximální délka slova v X: 13
+Maximální délká slova v Y: 15
+Tabulka četností slov různých délek:
+ [[ 40 186 270 175 125  93  70  41  32  13   9   2   3   0   1]
+ [ 53 199 226 214 140  78  74  41  26  11  10   5   3   0   0]]
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}14}]:} \PY{k}{def} \PY{n+nf}{getNpp}\PY{p}{(}\PY{n}{M}\PY{p}{,} \PY{n}{n}\PY{p}{)}\PY{p}{:}
+             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Celková suma: n = }\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{n}{n}\PY{p}{)}
+             
+             \PY{c+c1}{\PYZsh{} Odhady marginálních pravděpodobností (parametrů)}
+             \PY{n}{pbj} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{n}{M}\PY{p}{,} \PY{n}{axis} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{)}\PY{o}{/}\PY{n}{n}
+             \PY{n}{pbi} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{n}{M}\PY{p}{,} \PY{n}{axis} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{)}\PY{o}{/}\PY{n}{n}
+             \PY{c+c1}{\PYZsh{}print(\PYZsq{}(X a Y) p\PYZus{}ib = \PYZsq{}, pbi.reshape((\PYZhy{}1,)))}
+             \PY{c+c1}{\PYZsh{}print(\PYZsq{}(cetnosti delek) p\PYZus{}bj = \PYZsq{}, pbj)}
+             
+             \PY{c+c1}{\PYZsh{} Výpočet teoretických četností}
+             \PY{n}{tab\PYZus{}p} \PY{o}{=} \PY{n}{pbi}\PY{n+nd}{@pbj}
+             \PY{n}{npp} \PY{o}{=} \PY{n}{tab\PYZus{}p}\PY{o}{*}\PY{n}{n}
+             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{Teoretické četnosti n*tab\PYZus{}p:}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{npp}\PY{p}{)}
+             \PY{k}{return} \PY{n}{npp}
+             
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}15}]:} \PY{n}{s} \PY{o}{=} \PY{n}{pd\PYZus{}xy}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{words}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{count}\PY{p}{(}\PY{p}{)}
+         \PY{n}{npp} \PY{o}{=} \PY{n}{getNpp}\PY{p}{(}\PY{n}{N}\PY{p}{,} \PY{n}{s}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Celková suma: n =  2140
+
+Teoretické četnosti n*tab\_p:
+ [[ 46.06542056 190.70093458 245.68224299 192.68224299 131.26168224
+   84.70093458  71.3271028   40.61682243  28.72897196  11.88785047
+    9.41121495   3.46728972   2.97196262   0.           0.4953271 ]
+ [ 46.93457944 194.29906542 250.31775701 196.31775701 133.73831776
+   86.29906542  72.6728972   41.38317757  29.27102804  12.11214953
+    9.58878505   3.53271028   3.02803738   0.           0.5046729 ]]
+
+    \end{Verbatim}
+
+    Z tabulky teoretických četností je vidět, že některá pole nesplňují
+doporučenou
+podmínku:\[\forall{i,j}: \dfrac{N_i\bullet N_{\bullet j}}{n} \geq 5.\]
+Proto jsme se rozhodli zmenšovat počet binů \(k\), dokud tato podmínka
+nebude platit.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}16}]:} \PY{k}{def} \PY{n+nf}{getMergeCols}\PY{p}{(}\PY{n}{M}\PY{p}{)}\PY{p}{:}
+             \PY{n}{columns} \PY{o}{=} \PY{n+nb}{set}\PY{p}{(}\PY{p}{)}
+             \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{M}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{p}{:}
+                 \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{M}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{:}
+                     \PY{k}{if}\PY{p}{(}\PY{n}{M}\PY{p}{[}\PY{n}{i}\PY{p}{,} \PY{n}{j}\PY{p}{]} \PY{o}{\PYZlt{}} \PY{l+m+mf}{5.0}\PY{p}{)}\PY{p}{:}
+                         \PY{c+c1}{\PYZsh{}print(M[i, j])}
+                         \PY{n}{columns}\PY{o}{.}\PY{n}{add}\PY{p}{(}\PY{n}{j}\PY{p}{)}
+             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Sloupce nesplňující podmínku:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{columns}\PY{p}{)}
+             \PY{k}{return} \PY{n}{columns}
+             
+         
+         \PY{k}{def} \PY{n+nf}{checkMatrixCondition}\PY{p}{(}\PY{n}{oldN}\PY{p}{,} \PY{n}{oldnpp}\PY{p}{,} \PY{n}{n}\PY{p}{)}\PY{p}{:}
+             \PY{n}{merge\PYZus{}cols} \PY{o}{=} \PY{n}{getMergeCols}\PY{p}{(}\PY{n}{oldnpp}\PY{p}{)}
+             \PY{k}{if}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{merge\PYZus{}cols}\PY{p}{)} \PY{o}{==} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{:}
+                 \PY{n}{merge\PYZus{}cols}\PY{o}{.}\PY{n}{add}\PY{p}{(}\PY{n+nb}{min}\PY{p}{(}\PY{n}{merge\PYZus{}cols}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}
+             \PY{n}{min\PYZus{}col} \PY{o}{=} \PY{n+nb}{min}\PY{p}{(}\PY{n}{merge\PYZus{}cols}\PY{p}{)}
+             \PY{n}{merge\PYZus{}cols}\PY{o}{.}\PY{n}{remove}\PY{p}{(}\PY{n}{min\PYZus{}col}\PY{p}{)}
+	     \PY{c+c1}{\PYZsh{}\PYZsh{} shlukneme sloupce co nesplnuji podminku do toho s nejmensim indexem}
+             \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{oldN}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{:}
+                 \PY{k}{if}\PY{p}{(}\PY{n}{j} \PY{o+ow}{in} \PY{n}{merge\PYZus{}cols}\PY{p}{)}\PY{p}{:}
+                     \PY{n}{oldN}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{min\PYZus{}col}\PY{p}{]} \PY{o}{+}\PY{o}{=} \PY{n}{oldN}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{n}{j}\PY{p}{]}
+                     
+             \PY{n}{cols} \PY{o}{=} \PY{p}{[} \PY{n}{x} \PY{k}{for} \PY{n}{x} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{oldN}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)} \PY{k}{if} \PY{n}{x} \PY{o+ow}{not} \PY{o+ow}{in} \PY{n}{merge\PYZus{}cols}\PY{p}{]}
+             \PY{n}{newN} \PY{o}{=} \PY{n}{oldN}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{n}{cols}\PY{p}{]}
+             \PY{n}{newnpp} \PY{o}{=} \PY{n}{getNpp}\PY{p}{(}\PY{n}{newN}\PY{p}{,} \PY{n}{n}\PY{p}{)}
+             
+             \PY{n}{merge\PYZus{}cols} \PY{o}{=} \PY{n}{getMergeCols}\PY{p}{(}\PY{n}{newnpp}\PY{p}{)}
+             \PY{k}{if}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{merge\PYZus{}cols}\PY{p}{)} \PY{o}{\PYZgt{}} \PY{l+m+mi}{0}\PY{p}{)}\PY{p}{:}
+                 \PY{n}{newN}\PY{p}{,} \PY{n}{newnpp} \PY{o}{=} \PY{n}{checkMatrixCondition}\PY{p}{(}\PY{n}{newN}\PY{p}{,} \PY{n}{newnpp}\PY{p}{,} \PY{n}{n}\PY{p}{)}
+             \PY{k}{return} \PY{n}{newN}\PY{p}{,} \PY{n}{newnpp}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}17}]:} \PY{n}{oldN} \PY{o}{=} \PY{n}{N}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{p}{)}
+         \PY{n}{oldnpp} \PY{o}{=} \PY{n}{npp}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{p}{)}
+         \PY{n}{N}\PY{p}{,} \PY{n}{npp} \PY{o}{=} \PY{n}{checkMatrixCondition}\PY{p}{(}\PY{n}{N}\PY{p}{,}\PY{n}{npp}\PY{p}{,} \PY{n}{s}\PY{p}{)}
+         
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Stará tabulka četností}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{oldN}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Nová tabulka četností}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{N}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Sloupce nesplňující podmínku: \{11, 12, 13, 14\}
+Celková suma: n =  2140
+
+Teoretické četnosti n*tab\_p:
+ [[ 46.06542056 190.70093458 245.68224299 192.68224299 131.26168224
+   84.70093458  71.3271028   40.61682243  28.72897196  11.88785047
+    9.41121495   6.93457944]
+ [ 46.93457944 194.29906542 250.31775701 196.31775701 133.73831776
+   86.29906542  72.6728972   41.38317757  29.27102804  12.11214953
+    9.58878505   7.06542056]]
+Sloupce nesplňující podmínku: set()
+
+Stará tabulka četností
+ [[ 40 186 270 175 125  93  70  41  32  13   9   2   3   0   1]
+ [ 53 199 226 214 140  78  74  41  26  11  10   5   3   0   0]]
+
+Nová tabulka četností
+ [[ 40 186 270 175 125  93  70  41  32  13   9   6]
+ [ 53 199 226 214 140  78  74  41  26  11  10   8]]
+
+    \end{Verbatim}
+
+    \paragraph{Testová statistika}\label{testovuxe1-statistika}
+
+Z dat jsme vytvořili novou tabulku četností nad kterou provedeme test
+nezávislosti dle vzorce:
+\[\chi^{2}  = \sum_{i=1}^{r} \sum_{j=1}^{c} \frac{(N_{ij} - \frac{ N_{i\bullet}N_{\bullet j}}{n})}{\frac{ N_{i\bullet}N_{\bullet j}}{n} } \]Počet stupňů volnosti počítáme jako: \((\#\)řádků\( - 1) *(\#\)sloupců\( - 1)\). 
+Výpočet kritické hodnoty: \(\chi_{\alpha,(r-1)(c-1)}^{2}\) 
+Podmínka, dle které zamítáme \(H_0\) zní: \(\chi^{2}\geq \chi_{\alpha,(r-1)(c-1)}^{2}\).
+Spočteme si tedy potřebné hodnoty a provedeme
+test:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}18}]:} \PY{c+c1}{\PYZsh{} Statistika}
+         \PY{n}{chi} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{square}\PY{p}{(}\PY{n}{N} \PY{o}{\PYZhy{}} \PY{n}{npp}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n}{npp}\PY{p}{)}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{Testová statistika: Chi\PYZca{}2 = }\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{chi}\PY{p}{)}
+         
+         \PY{n}{df} \PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{n}{N}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1} \PY{p}{)}\PY{o}{*}\PY{p}{(}\PY{n}{N}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{)} \PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Stupně volnosti:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{df}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Kritická hodnota:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{stats}\PY{o}{.}\PY{n}{chi2}\PY{o}{.}\PY{n}{isf}\PY{p}{(}\PY{l+m+mf}{0.05}\PY{p}{,} \PY{n}{df}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+Testová statistika: Chi\^{}2 =  13.285320732012462
+Stupně volnosti: 11
+Kritická hodnota: 19.67513757268249
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}19}]:} \PY{c+c1}{\PYZsh{} výsledek testu}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Výsledek podmínky zamítnutí:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{chi} \PY{o}{\PYZgt{}}\PY{o}{=} \PY{n}{stats}\PY{o}{.}\PY{n}{chi2}\PY{o}{.}\PY{n}{isf}\PY{p}{(}\PY{l+m+mf}{0.05}\PY{p}{,} \PY{n}{df}\PY{p}{)}\PY{p}{)}
+         
+         \PY{c+c1}{\PYZsh{} Pomocí funkce}
+         \PY{n}{s}\PY{p}{,} \PY{n}{p}\PY{p}{,} \PY{n}{d}\PY{p}{,} \PY{n}{e} \PY{o}{=} \PY{n}{stats}\PY{o}{.}\PY{n}{chi2\PYZus{}contingency}\PY{p}{(}\PY{n}{N}\PY{p}{,} \PY{n}{correction} \PY{o}{=} \PY{k+kc}{False}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Hodnota testové statistiky: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{s}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{p\PYZhy{}hodnota:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{p}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+Výsledek podmínky zamítnutí: False
+
+Hodnota testové statistiky:  13.285320732012455
+p-hodnota: 0.2750867825892949
+
+    \end{Verbatim}
+
+    \paragraph{Diskuze k výsledku}\label{diskuze-k-vuxfdsledku}
+
+Výsledek podmínky zamítnutí je negativní, protože \textbf{neplatí} \(\chi^{2} \geq \chi_{0.05,12}^{2}\) a tím pádem jsou délky
+slov nezávislé na tom, ze kterého textu pochází (nezamítáme \(H_0\)).
+Výsledek testu jsme mohli předpokládat kvůli faktu, že jsou oba texty ze
+stejného období (1886 a 1897).
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}20}]:} \PY{c+c1}{\PYZsh{}\PYZsh{} vysledky na neupravene matici oldN}
+         \PY{c+c1}{\PYZsh{} dropneme 14. sloupec s nulama}
+         \PY{n}{testN} \PY{o}{=} \PY{n}{oldN}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{,}\PY{l+m+mi}{7}\PY{p}{,}\PY{l+m+mi}{8}\PY{p}{,}\PY{l+m+mi}{9}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{,}\PY{l+m+mi}{11}\PY{p}{,}\PY{l+m+mi}{12}\PY{p}{,}\PY{l+m+mi}{14}\PY{p}{]}\PY{p}{]}
+         \PY{n}{testnpp} \PY{o}{=} \PY{n}{oldnpp}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{,}\PY{l+m+mi}{7}\PY{p}{,}\PY{l+m+mi}{8}\PY{p}{,}\PY{l+m+mi}{9}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{,}\PY{l+m+mi}{11}\PY{p}{,}\PY{l+m+mi}{12}\PY{p}{,}\PY{l+m+mi}{14}\PY{p}{]}\PY{p}{]}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Neupravená tabulka bez nulových sloupců:}
+         \PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{testN}\PY{p}{)}
+         
+         \PY{n}{chi} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{square}\PY{p}{(}\PY{n}{testN} \PY{o}{\PYZhy{}} \PY{n}{testnpp}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n}{testnpp}\PY{p}{)}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{Testová statistika (old): Chi\PYZca{}2 = }\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{chi}\PY{p}{)}
+         
+         \PY{n}{df} \PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{n}{testN}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1} \PY{p}{)}\PY{o}{*}\PY{p}{(}\PY{n}{testN}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{)} \PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Stupně volnosti:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{df}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Kritická hodnota:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{stats}\PY{o}{.}\PY{n}{chi2}\PY{o}{.}\PY{n}{isf}\PY{p}{(}\PY{l+m+mf}{0.05}\PY{p}{,} \PY{n}{df}\PY{p}{)}\PY{p}{)}
+         \PY{c+c1}{\PYZsh{} výsledek testu}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Výsledek podmínky zamítnutí (oldN):}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{chi} \PY{o}{\PYZgt{}}\PY{o}{=} \PY{n}{stats}\PY{o}{.}\PY{n}{chi2}\PY{o}{.}\PY{n}{isf}\PY{p}{(}\PY{l+m+mf}{0.05}\PY{p}{,} \PY{n}{df}\PY{p}{)}\PY{p}{)}
+         
+         \PY{c+c1}{\PYZsh{} Pomocí funkce}
+         \PY{n}{s}\PY{p}{,} \PY{n}{p}\PY{p}{,} \PY{n}{d}\PY{p}{,} \PY{n}{e} \PY{o}{=} \PY{n}{stats}\PY{o}{.}\PY{n}{chi2\PYZus{}contingency}\PY{p}{(}\PY{n}{testN}\PY{p}{,} \PY{n}{correction} \PY{o}{=} \PY{k+kc}{False}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Hodnota testové statistiky: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{s}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{p\PYZhy{}hodnota:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{p}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Neupravená tabulka bez nulových sloupců:
+ [[ 40 186 270 175 125  93  70  41  32  13   9   2   3   1]
+  [ 53 199 226 214 140  78  74  41  26  11  10   5   3   0]]
+
+Testová statistika (old): Chi\^{}2 =  15.285495435017353
+Stupně volnosti: 13
+Kritická hodnota: 22.362032494826945
+
+Výsledek podmínky zamítnutí (oldN): False
+
+Hodnota testové statistiky:  15.285495435017346
+p-hodnota: 0.28987054391678296
+
+    \end{Verbatim}
+
+    Výsledek testu na původních datech dopadl stejně, tedy příliš malé
+hodnoty některých očekávaných hodnot zde neměly vliv na konečný výsledek
+testu.
+
+    \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section*{4. Na hladině významnosti 5\% otestujte hypotézu, že se
+střední délky slov v obou textech rovnají. Určete také p-hodnotu
+testu.}\label{na-hladinux11b-vuxfdznamnosti-5-otestujte-hypotuxe9zu-ux17ee-se-stux159ednuxed-duxe9lky-slov-v-obou-textech-rovnajuxed.-urux10dete-takuxe9-p-hodnotu-testu.}
+
+Na hladině významnosti \(5\%\) budeme testovat hypotézu \(H_0\), že se
+střední délky slov v obou textech rovnají. Jedná se o dva nezávislé
+texty (skupiny), takže provedeme dvouvýběrový test.
+Nejprve provedeme F-Test na rovnost rozptylů obou textů, podle kterého
+následně provedeme dvouvýběrový test podle stejných nebo různých
+rozptylů.
+Chceme otestovat hypotézu \(H_0\): \(\sigma_{1}^{2} =\sigma_{2}^{2}\), proti alternativě \(H_A\): \(\sigma_{1}^{2} \neq \sigma_{2}^{2}\). 
+K tomu využijeme testovou statistiku \(T = \frac{s_{X}^2}{s_{Y}^2}\), případně i Bartlettův a Levenův test.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}21}]:} \PY{c+c1}{\PYZsh{} Test shodnosti rozptylů}
+         \PY{n}{n} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{words\PYZus{}x}\PY{p}{)} \PY{p}{,}\PY{n}{m} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{words\PYZus{}y}\PY{p}{)}
+         
+         \PY{n}{T} \PY{o}{=} \PY{n}{varX} \PY{o}{/} \PY{n}{varY}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Testová statistika (F\PYZhy{}test):}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{T}\PY{p}{)}
+         \PY{n}{p\PYZus{}cdf} \PY{o}{=} \PY{n}{stats}\PY{o}{.}\PY{n}{f}\PY{o}{.}\PY{n}{cdf}\PY{p}{(}\PY{n}{T}\PY{p}{,} \PY{n}{n}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{m}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}
+         \PY{c+c1}{\PYZsh{}funkce preziti}
+         \PY{n}{p\PYZus{}value} \PY{o}{=} \PY{l+m+mi}{2}\PY{o}{*}\PY{n}{stats}\PY{o}{.}\PY{n}{f}\PY{o}{.}\PY{n}{sf}\PY{p}{(}\PY{n}{T}\PY{p}{,} \PY{n}{n}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{m}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{F\PYZhy{}test p\PYZhy{}hodnota:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{p\PYZus{}value}\PY{p}{)}
+         
+         \PY{c+c1}{\PYZsh{}pro ne\PYZhy{}Normalni rozdeleni X a Y }
+         \PY{k+kn}{import} \PY{n+nn}{scipy}\PY{n+nn}{.}\PY{n+nn}{stats}
+         \PY{n}{x\PYZus{}samples} \PY{o}{=} \PY{n}{lengths\PYZus{}x}\PY{p}{[}\PY{p}{:}\PY{p}{]}
+         \PY{n}{y\PYZus{}samples} \PY{o}{=} \PY{n}{lengths\PYZus{}y}\PY{p}{[}\PY{p}{:}\PY{p}{]}
+         \PY{n}{B}\PY{p}{,}\PY{n}{p} \PY{o}{=} \PY{n}{scipy}\PY{o}{.}\PY{n}{stats}\PY{o}{.}\PY{n}{bartlett}\PY{p}{(}\PY{n}{x\PYZus{}samples}\PY{p}{,} \PY{n}{y\PYZus{}samples}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Bartlett stat:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{B}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Bartlett p\PYZus{}val: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{p}\PY{p}{)}
+         \PY{n}{L}\PY{p}{,}\PY{n}{p} \PY{o}{=} \PY{n}{scipy}\PY{o}{.}\PY{n}{stats}\PY{o}{.}\PY{n}{levene}\PY{p}{(}\PY{n}{x\PYZus{}samples}\PY{p}{,} \PY{n}{y\PYZus{}samples}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Levene stat:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{L}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Levene p\PYZus{}val: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{p}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Testová statistika (F-test): 1.0117885259255435
+F-test p-hodnota: 0.8479539146201472
+Bartlett stat: 0.03668717501416687 Bartlett p\_val:  0.8481033561510454
+Levene stat: 0.30298631365647144 Levene p\_val:  0.5820738029669725
+
+    \end{Verbatim}
+
+    Rozptyly budeme předpokládat stejné, protože p-hodnota pro zamítnutí je
+ve všech testech vysoká, tedy \(H_0\) nezamítáme. V Levenově testu nám
+vyšel odhad p hodnoty na 58\%, což už se blíží k pravděpodobnosti 50:50,
+že se rozptyly liší. Proto můžeme čistě pro kontrolu provést i "slabší"
+test pro různé rozptyly a podívat se, jestli náhodou nevyjde jinak
+(nevyjde).
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}22}]:} \PY{c+c1}{\PYZsh{} T\PYZhy{}test se ruznymi rozptyly}
+         \PY{n}{sd} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(} \PY{n}{varX}\PY{o}{/}\PY{n}{n} \PY{o}{+} \PY{n}{varY}\PY{o}{/}\PY{n}{m} \PY{p}{)}
+         \PY{n}{T} \PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{n}{pd\PYZus{}x}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{len}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{n}{pd\PYZus{}y}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{len}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{o}{/}\PY{n}{sd}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Hodnota testové statistiky: T = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{T}\PY{p}{)}
+         
+         \PY{n}{nd} \PY{o}{=} \PY{n}{sd}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{4} \PY{o}{/} \PY{p}{(} \PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{p}{(}\PY{n}{n}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{p}{(}\PY{p}{(}\PY{n}{varX}\PY{o}{/}\PY{n}{n}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)} \PY{o}{+} \PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{p}{(}\PY{n}{m}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{p}{(}\PY{p}{(}\PY{n}{varY}\PY{o}{/}\PY{n}{m}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)} \PY{p}{)}
+         \PY{n}{krit} \PY{o}{=} \PY{n}{stats}\PY{o}{.}\PY{n}{t}\PY{o}{.}\PY{n}{isf}\PY{p}{(}\PY{l+m+mf}{0.05}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{df} \PY{o}{=} \PY{n}{nd}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Kritická hodnota: t = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{krit}\PY{p}{)}
+         
+         \PY{c+c1}{\PYZsh{}Výsledek testu}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Zamítáme: }\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{abs}\PY{p}{(}\PY{n}{T}\PY{p}{)} \PY{o}{\PYZgt{}}\PY{o}{=} \PY{n}{krit}\PY{p}{)}
+         
+         \PY{c+c1}{\PYZsh{}p\PYZhy{}hodnota}
+         \PY{n}{p\PYZus{}value}\PY{o}{=}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{stats}\PY{o}{.}\PY{n}{t}\PY{o}{.}\PY{n}{sf}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{abs}\PY{p}{(}\PY{n}{T}\PY{p}{)}\PY{p}{,} \PY{n}{df} \PY{o}{=} \PY{n}{nd}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{p\PYZhy{}hodnota: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{p\PYZus{}value}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Hodnota testové statistiky: T =  0.49268194278264094
+Kritická hodnota: t =  1.961074847269533
+Zamítáme:  False
+p-hodnota:  0.6222879604666979
+
+    \end{Verbatim}
+
+    Protože uvažujeme stejnou hodnotu rozptylů, budeme na hladině
+významnosti \(5\%\) testovat hypotézu: - \(H_0\): \(\mu_\emph{1} =\mu_\emph{2}\), že se střední délky slov v obou textech rovnají, proti alternativě
+\(H_A\):~\(\mu\emph{1}~\neq~\mu\emph{2}\), že se
+střední délky slov v obou textech nerovnají.
+
+Využijeme testovou statistiku T:
+\[ T = \frac{\overline{X}_n - \overline{Y}_m}{s_{12}} \sqrt{\frac{nm}{n+m}} ,\]
+kde \( s_{12} = \sqrt{\frac{(n-1)s_{X}^2 + (m-1)s_{Y}^2}{n+m-2}} \) s
+kritickým oborem \(\textbar{}T\textbar{} \geq t_{\alpha/2,n+m-2}\).
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}23}]:} \PY{c+c1}{\PYZsh{} T\PYZhy{}test se stejnými rozptyly}
+         \PY{n}{s12} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{n}{n}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}\PY{o}{*}\PY{n}{varX} \PY{o}{+} \PY{p}{(}\PY{n}{m}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}\PY{o}{*}\PY{n}{varY}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n}{n}\PY{o}{+}\PY{n}{m}\PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}
+         \PY{n}{T} \PY{o}{=} \PY{p}{(}\PY{n}{EX} \PY{o}{\PYZhy{}} \PY{n}{EY}\PY{p}{)}\PY{o}{/}\PY{n}{s12}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{n}\PY{o}{*}\PY{n}{m}\PY{o}{/}\PY{p}{(}\PY{n}{n}\PY{o}{+}\PY{n}{m}\PY{p}{)}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Hodnota testové statistiky: T = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{T}\PY{p}{)}
+         
+         \PY{n}{krit} \PY{o}{=} \PY{n}{stats}\PY{o}{.}\PY{n}{t}\PY{o}{.}\PY{n}{isf}\PY{p}{(}\PY{l+m+mf}{0.05}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{df} \PY{o}{=} \PY{n}{n}\PY{o}{+}\PY{n}{m}\PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Kritická hodnota: t = }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{krit}\PY{p}{)}
+         
+         \PY{c+c1}{\PYZsh{} výsledek testu}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Zamítáme: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{np}\PY{o}{.}\PY{n}{abs}\PY{p}{(}\PY{n}{T}\PY{p}{)} \PY{o}{\PYZgt{}}\PY{o}{=} \PY{n}{krit}\PY{p}{)}
+         
+         \PY{c+c1}{\PYZsh{} p\PYZhy{}hodnota}
+         \PY{n}{p\PYZus{}value} \PY{o}{=} \PY{l+m+mi}{2}\PY{o}{*}\PY{n}{stats}\PY{o}{.}\PY{n}{t}\PY{o}{.}\PY{n}{sf}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{abs}\PY{p}{(}\PY{n}{T}\PY{p}{)}\PY{p}{,} \PY{n}{df} \PY{o}{=} \PY{n}{n} \PY{o}{+} \PY{n}{m} \PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{p\PYZhy{}hodnota:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{p\PYZus{}value}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Hodnota testové statistiky: T =  0.492708937267016
+Kritická hodnota: t =  1.9610741772191844
+Zamítáme:  False
+p-hodnota: 0.6222688564504562
+
+    \end{Verbatim}
+    \paragraph{Diskuze k výsledku}\label{diskuze-k-vuxfdsledku}
+
+Dle podmínky zamínutí \(\textbar{}T\textbar{} \geq t_{0.025,2138}\) je výsledkem nezamítnutí \(H_0\), tedy střední délka slov se v obou
+textech rovná. Toto tvrzení opět potvrzuje velkou podobnost ve vybraných
+textech, stejně jako v ostatních úlohách.
+
+    \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section*{5. Na hladině významnosti 5\% otestujte hypotézu, že
+rozdělení písmen nezávisí na tom, o který jde text. Určete také
+p-hodnotu
+testu.}\label{na-hladinux11b-vuxfdznamnosti-5-otestujte-hypotuxe9zu-ux17ee-rozdux11blenuxed-puxedsmen-nezuxe1visuxed-na-tom-o-kteruxfd-jde-text.-urux10dete-takuxe9-p-hodnotu-testu.}
+
+Stejně jako v úloze 3. si nejprve vytvoříme kontingenční tabulku.
+Vytvoříme ji z četností jednotlivých písmen a poté provedem \(\chi^{2}\)
+nezávislosti. Na hladině významnosti \(5\%\) budeme testovat hypotézy: -
+Rozdělení jsou stejná: \(H_0\) - \(p_{i,j} = p_{i\bullet}p_{\bullet j}\)
+- Rozdělení se liší: \(H_A\) -
+\(p_{i,j} \neq p_{i\bullet}p_{\bullet j}\)
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}24}]:} \PY{n}{abeceda} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{n+nb}{map}\PY{p}{(}\PY{n+nb}{chr}\PY{p}{,} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{97}\PY{p}{,} \PY{l+m+mi}{123}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+         
+         \PY{n}{textX} \PY{o}{=} \PY{p}{[} \PY{n}{x\PYZus{}nospaces}\PY{o}{.}\PY{n}{count}\PY{p}{(}\PY{n}{a}\PY{p}{)} \PY{k}{for} \PY{n}{a} \PY{o+ow}{in} \PY{n}{abeceda} \PY{p}{]}
+         \PY{n}{textY} \PY{o}{=} \PY{p}{[} \PY{n}{y\PYZus{}nospaces}\PY{o}{.}\PY{n}{count}\PY{p}{(}\PY{n}{a}\PY{p}{)} \PY{k}{for} \PY{n}{a} \PY{o+ow}{in} \PY{n}{abeceda} \PY{p}{]}
+         
+         \PY{n}{Nchar} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{matrix}\PY{p}{(}\PY{p}{[}\PY{n}{textX}\PY{p}{,}\PY{n}{textY}\PY{p}{]}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Tabulka četností znaků:}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{Nchar}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Tabulka četností znaků:
+ [[366  65 105 205 561 102  87 276 279   7  37 194 109 344 357  65   8 260
+  284 447 111  34 118   2  95   0]
+ [391  69  94 171 542 104  96 281 300   6  45 169 136 278 341  72   4 299
+  290 468 117  52 118   8  96   5]]
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}25}]:} \PY{n}{s} \PY{o}{=} \PY{n}{chars\PYZus{}xy}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{count}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{p}{)}
+         \PY{n}{nppchar} \PY{o}{=} \PY{n}{getNpp}\PY{p}{(}\PY{n}{Nchar}\PY{p}{,} \PY{n}{s}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Celková suma: n =  9070
+
+Teoretické četnosti n*tab\_p:
+ [[377.08114664  66.74884234  99.12701213 187.2952591  549.43263506
+  102.61389195  91.1570011  277.45600882 288.41477398   6.47563396
+   40.8463065  180.81962514 122.04079383 309.83417861 347.69173098
+   68.2432194    5.97750827 278.4522602  285.92414553 455.78500551
+  113.57265711  42.83880926 117.55766262   4.98125689  95.14200662
+    2.49062845]
+ [379.91885336  67.25115766  99.87298787 188.7047409  553.56736494
+  103.38610805  91.8429989  279.54399118 290.58522602   6.52436604
+   41.1536935  182.18037486 122.95920617 312.16582139 350.30826902
+   68.7567806    6.02249173 280.5477398  288.07585447 459.21499449
+  114.42734289  43.16119074 118.44233738   5.01874311  95.85799338
+    2.50937155]]
+
+    \end{Verbatim}
+
+    Opět sloučíme některé sloupce abychom splnili doporučené očekávané
+hodnoty.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}26}]:} \PY{n}{oldNchar} \PY{o}{=} \PY{n}{Nchar}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{p}{)}
+         \PY{n}{oldnppchar} \PY{o}{=} \PY{n}{nppchar}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{p}{)}
+         \PY{n}{Nchar}\PY{p}{,} \PY{n}{nppchar} \PY{o}{=} \PY{n}{checkMatrixCondition}\PY{p}{(}\PY{n}{Nchar}\PY{p}{,}\PY{n}{nppchar}\PY{p}{,}\PY{n}{s}\PY{p}{)}
+         
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Stará tabulka četností}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{oldNchar}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Nová tabulka četností}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{Nchar}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Sloupce nesplňující podmínku: \{25, 23\}
+Celková suma: n =  9070
+
+Teoretické četnosti n*tab\_p:
+ [[377.08114664  66.74884234  99.12701213 187.2952591  549.43263506
+  102.61389195  91.1570011  277.45600882 288.41477398   6.47563396
+   40.8463065  180.81962514 122.04079383 309.83417861 347.69173098
+   68.2432194    5.97750827 278.4522602  285.92414553 455.78500551
+  113.57265711  42.83880926 117.55766262   7.47188534  95.14200662]
+ [379.91885336  67.25115766  99.87298787 188.7047409  553.56736494
+  103.38610805  91.8429989  279.54399118 290.58522602   6.52436604
+   41.1536935  182.18037486 122.95920617 312.16582139 350.30826902
+   68.7567806    6.02249173 280.5477398  288.07585447 459.21499449
+  114.42734289  43.16119074 118.44233738   7.52811466  95.85799338]]
+Sloupce nesplňující podmínku: set()
+
+Stará tabulka četností
+ [[366  65 105 205 561 102  87 276 279   7  37 194 109 344 357  65   8 260
+  284 447 111  34 118   2  95   0]
+ [391  69  94 171 542 104  96 281 300   6  45 169 136 278 341  72   4 299
+  290 468 117  52 118   8  96   5]]
+
+Nová tabulka četností
+ [[366  65 105 205 561 102  87 276 279   7  37 194 109 344 357  65   8 260
+  284 447 111  34 118   2  95]
+ [391  69  94 171 542 104  96 281 300   6  45 169 136 278 341  72   4 299
+  290 468 117  52 118  13  96]]
+
+    \end{Verbatim}
+
+    \paragraph{Testová statistika}\label{testovuxe1-statistika}
+
+Z dat jsme vytvořili novou tabulku četností nad kterou provedeme test
+nezávislosti dle vzorce:
+\[ \chi^{2}  = \sum_{i=1}^{r} \sum_{j=1}^{c} \frac{(N_{ij} - \frac{ N_{i\bullet}N_{\bullet j}}{n})}{\frac{ N_{i\bullet}N_{\bullet j}}{n} } \]
+Počet stupňů volnosti počítáme jako: \((\#\) řádků \(- 1) * (\#\)
+sloupců \(- 1)\).
+
+
+Výpočet kritické hodnoty: \(\chi_{\alpha,(r-1)(c-1)}^{2}\)
+Podmínka dle které zamítáme \(H_0\): \(\chi^{2} \geq \chi_{\alpha,(r-1)(c-1)}^{2}\)
+Spočteme hodnoty a provedeme test hypotézy.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}27}]:} \PY{c+c1}{\PYZsh{} Statistika}
+         \PY{n}{chi} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{square}\PY{p}{(}\PY{n}{Nchar} \PY{o}{\PYZhy{}} \PY{n}{nppchar}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n}{nppchar}\PY{p}{)}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{Testová statistika: Chi\PYZca{}2 = }\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{chi}\PY{p}{)}
+         
+         \PY{n}{df} \PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{n}{Nchar}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1} \PY{p}{)}\PY{o}{*}\PY{p}{(}\PY{n}{Nchar}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{)} \PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Stupně volnosti:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{df}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Kritická hodnota:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{stats}\PY{o}{.}\PY{n}{chi2}\PY{o}{.}\PY{n}{isf}\PY{p}{(}\PY{l+m+mf}{0.05}\PY{p}{,} \PY{n}{df}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+Testová statistika: Chi\^{}2 =  35.97497553614714
+Stupně volnosti: 24
+Kritická hodnota: 36.415028501807306
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}28}]:} \PY{c+c1}{\PYZsh{} výsledek testu}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Výsledek podmínky zamítnutí:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{chi} \PY{o}{\PYZgt{}}\PY{o}{=} \PY{n}{stats}\PY{o}{.}\PY{n}{chi2}\PY{o}{.}\PY{n}{isf}\PY{p}{(}\PY{l+m+mf}{0.05}\PY{p}{,} \PY{n}{df}\PY{p}{)}\PY{p}{)}
+         
+         \PY{c+c1}{\PYZsh{} Pomocí funkce}
+         \PY{n}{s}\PY{p}{,} \PY{n}{p}\PY{p}{,} \PY{n}{d}\PY{p}{,} \PY{n}{e} \PY{o}{=} \PY{n}{stats}\PY{o}{.}\PY{n}{chi2\PYZus{}contingency}\PY{p}{(}\PY{n}{Nchar}\PY{p}{,} \PY{n}{correction} \PY{o}{=} \PY{k+kc}{False}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Hodnota testové statistiky: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{s}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{p\PYZhy{}hodnota:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{p}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+Výsledek podmínky zamítnutí: False
+Hodnota testové statistiky:  35.97497553614716
+p-hodnota: 0.055194986435978484
+
+    \end{Verbatim}
+
+    \paragraph{Diskuze k výsledku}\label{diskuze-k-vuxfdsledku}
+    
+Výsledek podmínky zamítnutí je negativní, protože \textbf{neplatí} \(\chi^{2} \geq \chi_{0.05,24}^{2}\) a tedy si můžeme myslet, že
+výskyty jednotlivých znaků jsou nezávislé na tom, ze kterého textu pochází.
+Výsledek testu jsme mohli předpokládat z grafu v úloze 2. a faktu, že
+jsou oba texty původem z Britských ostrovů, nicméně p hodnota je pouze
+5.5\% -- tedy od zamítnutí \(H_0\) nejsme daleko.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}29}]:} \PY{c+c1}{\PYZsh{}\PYZsh{} vysledky na neupravene matici oldNchar}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Neupravená tabulka bez nulových sloupců:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{oldNchar}\PY{p}{)}
+         \PY{n}{chi} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{square}\PY{p}{(}\PY{n}{oldNchar} \PY{o}{\PYZhy{}} \PY{n}{oldnppchar}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n}{oldnppchar}\PY{p}{)}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{Testová statistika (old): Chi\PYZca{}2 = }\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{chi}\PY{p}{)}
+         
+         \PY{n}{df} \PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{n}{oldNchar}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1} \PY{p}{)}\PY{o}{*}\PY{p}{(}\PY{n}{oldNchar}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{)} \PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Stupně volnosti:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{df}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Kritická hodnota:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{stats}\PY{o}{.}\PY{n}{chi2}\PY{o}{.}\PY{n}{isf}\PY{p}{(}\PY{l+m+mf}{0.05}\PY{p}{,} \PY{n}{df}\PY{p}{)}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Výsledek podmínky zamítnutí (oldNchar):}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{chi} \PY{o}{\PYZgt{}}\PY{o}{=} \PY{n}{stats}\PY{o}{.}\PY{n}{chi2}\PY{o}{.}\PY{n}{isf}\PY{p}{(}\PY{l+m+mf}{0.05}\PY{p}{,} \PY{n}{df}\PY{p}{)}\PY{p}{)}
+         \PY{n}{s}\PY{p}{,} \PY{n}{p}\PY{p}{,} \PY{n}{d}\PY{p}{,} \PY{n}{e} \PY{o}{=} \PY{n}{stats}\PY{o}{.}\PY{n}{chi2\PYZus{}contingency}\PY{p}{(}\PY{n}{oldNchar}\PY{p}{,} \PY{n}{correction} \PY{o}{=} \PY{k+kc}{False}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Hodnota testové statistiky: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{s}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{p\PYZhy{}hodnota:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{p}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Neupravená tabulka bez nulových sloupců:
+ [[366 65 105 205 561 102 87 276 279 7 37 194 109 344 357 65 8 260 284 447 
+ 111 34 118 2 95 0]
+  [391 69  94 171 542 104 96 281 300 6 45 169 136 278 341 72 4 299 290 468 
+ 117 52 118 8 96 5]]
+
+Testová statistika (old): Chi\^{}2 =  36.508316364074126
+Stupně volnosti: 25
+Kritická hodnota: 37.65248413348277
+
+Výsledek podmínky zamítnutí (oldNchar): False
+
+Hodnota testové statistiky:  36.50831636407414
+p-hodnota: 0.0642331236670156
+
+    \end{Verbatim}
+
+    \subsection*{Závěr}\label{zuxe1vux11br}
+
+K analýze jsme si načetli dva velmi podobné texty - ze stejného období a
+na podobná témata, tudíž jsme ani v jedné úloze nezamítali nulovou
+hypotézu. Pro kontrolu správnosti jsme si také nagenerovali jiná data -
+konkrétně pro k = 20, tedy texty 001.txt a 011.txt (texty Americké
+literatury z let 1915 a 1876), kde nám výsledky testů vycházely právě
+opačně, ve všech úlohách jsme nulovou hypotézu zamítali ve prospěch
+alternativní a p-hodnoty vycházely blízko nule.
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+    \end{document}

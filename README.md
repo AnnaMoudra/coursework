@@ -6,7 +6,7 @@ The selection of code published is migrated from my university gitlab account.
 coursework
 │   README.md
 |
-└───DDW (web mining course)
+└───DDW (web mining course) 
 │   │   README.md
 │   └─── 01 - web scraping
 |   └─── 02 - index & document retrieval
@@ -30,7 +30,7 @@ coursework
 |   └─── 02 - data lifecycle management
 |   └─── 03 - datamart & dashboard
 |
-└───MVI_ADM (machine learning courses)
+└───MVI_ADM (machine learning courses) 
 |   |   README.md
 |   |
 |   └───mvi coursework
@@ -52,9 +52,9 @@ coursework
 |   └─── 02
 |
 └───VZD (basic data mining course)
-│   │   README.md
-│   └─── 01
-|   └─── 02
-|   └─── 03
-|   └─── 04
+    │   README.md
+    └─── 01
+    └─── 02
+    └─── 03
+    └─── 04
 ```

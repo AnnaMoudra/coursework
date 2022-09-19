@@ -1,0 +1,631 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+\documentclass[11pt]{article}
+
+    
+    
+    \usepackage[T1]{fontenc}
+    % Nicer default font (+ math font) than Computer Modern for most use cases
+    \usepackage{mathpazo}
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % We will generate all images so they have a width \maxwidth. This means
+    % that they will get their normal width if they fit onto the page, but
+    % are scaled down if they would overflow the margins.
+    \makeatletter
+    \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
+    \else\Gin@nat@width\fi}
+    \makeatother
+    \let\Oldincludegraphics\includegraphics
+    % Set max figure width to be 80% of text width, for now hardcoded.
+    \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=.8\maxwidth]{#1}}
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionLabelFormat{nolabel}{}
+    \captionsetup{labelformat=nolabel}
+
+    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    \usepackage{mathrsfs}
+    
+
+    
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+    \definecolor{ansi-default-inverse-fg}{HTML}{FFFFFF}
+    \definecolor{ansi-default-inverse-bg}{HTML}{000000}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatibility definitions
+    \def\gt{>}
+    \def\lt{<}
+    \let\Oldtex\TeX
+    \let\Oldlatex\LaTeX
+    \renewcommand{\TeX}{\textrm{\Oldtex}}
+    \renewcommand{\LaTeX}{\textrm{\Oldlatex}}
+    % Document parameters
+    % Document title
+    \title{MI-SPI Domácí úkol 2}
+    
+    
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@fm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sa\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@dl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ch\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cpf\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+    \begin{document}
+    
+    
+    \maketitle
+
+\paragraph{Skupina:}\label{skupina}
+
+\begin{verbatim}
+- Vojtěch Polcar (polcavoj, paralelka 108) - reprezentant
+- Anna Moudrá (moudrann, paralelka 102)
+\end{verbatim}
+
+\noindent
+Nejprve určíme parametry pro výpočet hodnot, které určí soubory pro
+vypracování úkolů.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+        \PY{k+kn}{from} \PY{n+nn}{scipy} \PY{k}{import} \PY{n}{stats}
+        \PY{k+kn}{from} \PY{n+nn}{scipy}\PY{n+nn}{.}\PY{n+nn}{optimize} \PY{k}{import} \PY{n}{minimize}
+        \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k}{as} \PY{n+nn}{pd}
+        \PY{k+kn}{import} \PY{n+nn}{seaborn} \PY{k}{as} \PY{n+nn}{sns}
+        
+        \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}14}]:} \PY{n}{k} \PY{o}{=} \PY{l+m+mi}{20}
+         \PY{n}{l} \PY{o}{=} \PY{l+m+mi}{6}
+         \PY{n}{x} \PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{n}{k}\PY{o}{*}\PY{n}{l}\PY{o}{*}\PY{l+m+mi}{23}\PY{p}{)} \PY{o}{\PYZpc{}} \PY{l+m+mi}{20}\PY{p}{)} \PY{o}{+} \PY{l+m+mi}{1}
+         
+         \PY{n}{str\PYZus{}X} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{3} \PY{o}{\PYZhy{}} \PY{n+nb}{len}\PY{p}{(}\PY{n+nb}{str}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{0}\PY{l+s+s1}{\PYZsq{}}\PY{o}{+} \PY{n+nb}{str}\PY{p}{(}\PY{n}{x}\PY{p}{)} \PY{o}{+} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{.txt}\PY{l+s+s1}{\PYZsq{}}
+         
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Vstupní soubor:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{str\PYZus{}X}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Vstupní soubor: 001.txt
+
+    \end{Verbatim}
+
+    \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
+\section*{1) Z~datového souboru načtěte text k~analýze. Odhadněte
+pravděpodobnosti písmen (včetně mezer), které se v~textu vyskytují.
+Takto získané empirické rozdělení graficky
+znázorněte.}
+
+V~této úloze nejprve načteme text ze souboru k~analýze a rozdělíme ho na
+jednotlivé znaky. Poté projdeme celý text a jednotlivé znaky sečteme.
+Tyto hodnoty nakonec vydělíme celkovým počtem znaků, z~čehož dostaneme
+pravděpodobnost výskytu znaků v~textu. Pravděpodobnost znaků je získána
+ze vzorce: \[P(c)=\frac{m}{n}\] kde c je aktuální znak, m je počet
+zastoupení znaku v~textu a n je celkový počet všech znaků.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{f} \PY{o}{=} \PY{n+nb}{open}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{./hw1\PYZhy{}source/}\PY{l+s+s1}{\PYZsq{}}\PY{o}{+}\PY{n}{str\PYZus{}X}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{X\PYZus{}info} \PY{o}{=} \PY{n}{f}\PY{o}{.}\PY{n}{readline}\PY{p}{(}\PY{p}{)}
+        \PY{n}{data\PYZus{}X} \PY{o}{=} \PY{n}{f}\PY{o}{.}\PY{n}{read}\PY{p}{(}\PY{p}{)}
+        \PY{n}{f}\PY{o}{.}\PY{n}{close}\PY{p}{(}\PY{p}{)}
+        
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Název textu:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{X\PYZus{}info}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Název textu: Pierrot, Dog of Belgium, by Walter A. Dyer
+
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{x\PYZus{}uni} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n+nb}{list}\PY{p}{(}\PY{n}{data\PYZus{}X}\PY{p}{[}\PY{p}{:}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+        \PY{n}{x\PYZus{}uni} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{n}{x\PYZus{}uni}\PY{p}{,} \PY{n}{return\PYZus{}counts}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{n}{x\PYZus{}uni}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+(array([' ', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
+       'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],
+        dtype='<U1'), 
+ array([1199, 438, 96, 102, 303, 659, 137, 141, 337, 297, 15, 52, 249, 
+       109, 355, 399, 91, 6,  350,  291,  436,  159, 30,  117, 1, 83, 6]))
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{chars\PYZus{}x} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{p}{)}
+        \PY{n}{chars\PYZus{}x}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{char}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{x\PYZus{}uni}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+        \PY{n}{chars\PYZus{}x}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{count}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{x\PYZus{}uni}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}
+        \PY{n}{chars\PYZus{}x}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{prob}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{chars\PYZus{}x}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{count}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{/}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{n}{x\PYZus{}uni}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{)}
+        
+        \PY{n}{chars\PYZus{}x}\PY{o}{.}\PY{n}{char} \PY{o}{=} \PY{n}{chars\PYZus{}x}\PY{o}{.}\PY{n}{char}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{space}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{colors} \PY{o}{=} \PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZsh{}3778bf}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZsh{}feb308}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{14}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
+        \PY{n}{sns}\PY{o}{.}\PY{n}{barplot}\PY{p}{(}\PY{n}{x}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{char}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{y}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{prob}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{data}\PY{o}{=}\PY{n}{chars\PYZus{}x}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{n}{colors}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{saturation}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Rozdělení znaků v textu}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{,}\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{znak}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{,}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{pravděpodobnost výskytu}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_7_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+\subsection*{Diskuze k~výsledku}\label{diskuze-k-vuxfdsledku}
+
+Z~grafu můžeme vidět, že rozdělení písmen odpovídá tomu, že je text
+v~anglickém jazyce. Pokud nebudeme počítat mezery, tak jsou v~něm
+nejčastějšími znaky právě písmena e, t, a, což potvrzuje i graf.
+
+\paragraph{Pro další body předpokládejme, že je text vygenerován
+z~homogenního markovského řetězce s~diskrétním
+časem.}\label{pro-dalux161uxed-body-pux159edpokluxe1dejme-ux17ee-je-text-vygenerovuxe1n-z-homogennuxedho-markovskuxe9ho-ux159etux11bzce-s-diskruxe9tnuxedm-ux10dasem.}
+
+\section*{2) Za tohoto předpokladu odhadněte matici
+přechodu.}\label{za-tohoto-pux159edpokladu-odhadnux11bte-matici-pux159echodu.}
+
+Ze zadaného textu odhadneme matici přechodu. Protože předpokládáme, že je
+text vygenerován z~homogenního markovského řetězce, získáme matici tak,
+že projdeme text a pro každý znak se podíváme na jeho následníka. To
+můžeme udělat protože předchozí předpoklad nám říká, že nezávisí na tom,
+jaké následníky měl znak dříve, ale zajímá nás pouze aktuální stav.
+
+V~řešení níže projdeme zadaný text a pro každý znak vytvoříme
+pravděpodobnost přechodu na všechny znaky. Pravděpodobnost každého
+přechodu odhadneme pomocí vzorce:
+\[P(M_{i+1}= d | M_i = c)=\frac{m}{n}\] kde c je aktuální znak, d je
+následující znak, m je počet výskytů znaku d za znakem c a n je počet
+všech výskytů znaku c (neboli počet všech následníků).
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}17}]:} \PY{n}{chars} \PY{o}{=} \PY{n}{chars\PYZus{}x}\PY{o}{.}\PY{n}{char}\PY{o}{.}\PY{n}{unique}\PY{p}{(}\PY{p}{)}
+         \PY{c+c1}{\PYZsh{}print(chars)}
+         \PY{n}{P} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{index}\PY{o}{=}\PY{n}{chars}\PY{p}{,} \PY{n}{columns}\PY{o}{=}\PY{n}{chars}\PY{p}{)}
+         
+         
+         \PY{k}{def} \PY{n+nf}{fillP}\PY{p}{(}\PY{n}{df}\PY{p}{,} \PY{n}{text}\PY{p}{,} \PY{n}{alphabet}\PY{p}{)}\PY{p}{:}
+           \PY{k}{for} \PY{n}{a} \PY{o+ow}{in} \PY{n}{alphabet}\PY{p}{:}
+              \PY{n}{char} \PY{o}{=} \PY{n}{a}
+              \PY{k}{if} \PY{n}{char} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{space}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}
+                \PY{n}{char} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZdq{}}
+              \PY{n}{indexes} \PY{o}{=} \PY{p}{[}\PY{n+nb}{int}\PY{p}{(}\PY{n}{index}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)} \PY{k}{for} \PY{n}{index}\PY{p}{,} \PY{n}{value} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n}{text}\PY{p}{)} \PY{k}{if} \PY{n}{value} \PY{o}{==} \PY{n}{char}\PY{p}{]}
+              \PY{n}{found} \PY{o}{=} \PY{p}{[}\PY{n}{text}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n}{indexes} \PY{k}{if} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{n+nb}{len}\PY{p}{(}\PY{n}{text}\PY{p}{)}\PY{p}{]}
+              \PY{k}{for} \PY{n}{b} \PY{o+ow}{in} \PY{n}{df}\PY{o}{.}\PY{n}{columns}\PY{p}{:}
+                 \PY{n}{after\PYZus{}char} \PY{o}{=} \PY{n}{b}
+                 \PY{k}{if} \PY{n}{after\PYZus{}char} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{space}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}
+                     \PY{n}{after\PYZus{}char} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZdq{}}
+                 \PY{k}{if}\PY{p}{(}\PY{n}{after\PYZus{}char} \PY{o+ow}{in} \PY{n+nb}{set}\PY{p}{(}\PY{n}{found}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+                     \PY{n}{after\PYZus{}char\PYZus{}prob} \PY{o}{=} \PY{n}{found}\PY{o}{.}\PY{n}{count}\PY{p}{(}\PY{n}{after\PYZus{}char}\PY{p}{)}\PY{o}{/}\PY{n+nb}{len}\PY{p}{(}\PY{n}{found}\PY{p}{)}
+                     \PY{n}{df}\PY{p}{[}\PY{n}{b}\PY{p}{]}\PY{p}{[}\PY{n}{a}\PY{p}{]} \PY{o}{=} \PY{n}{after\PYZus{}char\PYZus{}prob}
+                 \PY{k}{else}\PY{p}{:}
+                     \PY{n}{df}\PY{p}{[}\PY{n}{b}\PY{p}{]}\PY{p}{[}\PY{n}{a}\PY{p}{]} \PY{o}{=} \PY{l+m+mi}{0}
+                     
+                 
+                     
+         \PY{n}{fillP}\PY{p}{(}\PY{n}{P}\PY{p}{,} \PY{n}{data\PYZus{}X}\PY{p}{,}\PY{n}{chars}\PY{p}{)}
+         \PY{c+c1}{\PYZsh{}display(P.head())}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Test (součet řádků): }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{P}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Test (součet řádků): 
+space    1.0
+a        1.0
+b        1.0
+c        1.0
+d        1.0
+e        1.0
+f        1.0
+g        1.0
+h        1.0
+i        1.0
+j        1.0
+k        1.0
+l        1.0
+m        1.0
+n        1.0
+o        1.0
+p        1.0
+q        1.0
+r        1.0
+s        1.0
+t        1.0
+u        1.0
+v        1.0
+w        1.0
+x        1.0
+y        1.0
+z        1.0
+dtype: float64
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}8}]:} \PY{n}{P}\PY{o}{.}\PY{n}{to\PYZus{}csv}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{matice\PYZus{}prechodu.csv}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+
+\subsection*{Diskuze k~výsledku}\label{diskuze-k-vuxfdsledku}
+
+Výsledkem předchozích výpočtů je matice o~velikosti 27x27. Pro
+přehlednost je matice vyexportovaná do souboru ``matice\_prechodu.csv''.
+Pro kontrolu byl proveden i součet pravděpodobností jednotlivých řádků.
+Ten správně vyšel pro každý řádek roven 1.
+
+\section*{3) Na základě matice z~předchozího bodu najděte stacionární
+rozdělení tohoto
+řetězce.}\label{na-zuxe1kladux11b-matice-z-pux159edchozuxedho-bodu-najdux11bte-stacionuxe1rnuxed-rozdux11blenuxed-tohoto-ux159etux11bzce.}
+
+Stacionární rozdělení řetězce najdeme na základě matice z~předchozího
+příkladu. Stacionární rozdělení \(\pi\) je řešením soustavy rovnic
+\( \boldsymbol{\pi} = \boldsymbol{\pi}*\mathbf{P} \) a \(\sum_{i=0}^{26} \pi_i = 1 \).. Tuto soustavu rovnic si upravíme na: \[ \boldsymbol{\pi}*(\mathbf{I} - \mathbf{P}) = 0 \], kde \(\mathbf{I} \)  je jednotková matice.
+
+Soustavu nyní můžeme napsat ve tvaru \( \mathbf{A}\boldsymbol{x} = \boldsymbol{b} \), kde \( \boldsymbol{b}\) je \((0,\dots,0,1)\) a \(\mathbf{A}\)~je matice \( \boldsymbol{\pi}*(\mathbf{I} - \mathbf{P}) \) s~přidaným
+posledním řádkem, reprezentujícím
+\( \boldsymbol{\pi} - (\pi_0, \pi_1,\dots,\pi_{26}) \). 
+Tuto soustavu rovnic vyřešíme a výsledkem bude  stacionárního rozdělení \( \boldsymbol{\pi} \).
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}13}]:} \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{} }
+         \PY{l+s+sd}{pi = pi*P }
+         \PY{l+s+sd}{soustava rovnic kde vektor pi je resenim soustavy:}
+         \PY{l+s+sd}{        pi( I\PYZhy{} P ) == 0   upravena rovnice}
+         \PY{l+s+sd}{        sum(pi) == 1}
+         \PY{l+s+sd}{        }
+         \PY{l+s+sd}{        tuto soustavu muzeme napsat ve tvaru Ax = b}
+         \PY{l+s+sd}{        kde b.T = [0,..,0,1]}
+         \PY{l+s+sd}{        a A= [[}
+         \PY{l+s+sd}{                }
+         \PY{l+s+sd}{                    pi( I\PYZhy{} P )}
+         \PY{l+s+sd}{                        }
+         \PY{l+s+sd}{                                  ]}
+         \PY{l+s+sd}{                [ pi0 + .. + pi26 ]]}
+         \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
+         \PY{k}{def} \PY{n+nf}{stationary}\PY{p}{(}\PY{n}{P}\PY{p}{)}\PY{p}{:}
+             \PY{n}{rows} \PY{o}{=} \PY{n}{P}\PY{o}{.}\PY{n}{shape}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{c+c1}{\PYZsh{} velikost vektoru pi}
+             \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{eye}\PY{p}{(}\PY{n}{rows}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{n}{P} \PY{c+c1}{\PYZsh{} I\PYZhy{} P \PYZsh{} vektor levych stran}
+             \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{vstack}\PY{p}{(} \PY{p}{(}\PY{n}{a}\PY{o}{.}\PY{n}{T}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{ones}\PY{p}{(}\PY{n}{rows}\PY{p}{)}\PY{p}{)} \PY{p}{)} \PY{c+c1}{\PYZsh{} pridani sum(pi) == 1}
+             \PY{c+c1}{\PYZsh{} v promenne a je ted matice A v soustave Ax = b}
+             \PY{n}{b\PYZus{}vect} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{n}{rows}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)} \PY{c+c1}{\PYZsh{} vektor pravych stran b}
+             \PY{n}{b\PYZus{}vect}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{=} \PY{l+m+mi}{1} \PY{c+c1}{\PYZsh{} 0 pro kazdou rovnici  pi( I \PYZhy{} P ) a 1 pro sum(pi) == 1}
+             \PY{n}{pi} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linalg}\PY{o}{.}\PY{n}{lstsq}\PY{p}{(} \PY{n}{a}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{float}\PY{p}{)}\PY{p}{,} \PY{n}{np}¨\PY{o}{.}\PY{n}{matrix}\PY{p}{(}\PY{n}{b\PYZus{}vect}\PY{p}{,} \PY{n}{dtype} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{float}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{o}{.}\PY{n}{T}
+             \PY{p}{,} \PY{n}{rcond}\PY{o}{=}\PY{k+kc}{None} \PY{p}{)} \PY{c+c1}{\PYZsh{}reseni sustavy rovnic}
+             \PY{k}{return} \PY{p}{[}\PY{n}{i}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n}{pi}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{tolist}\PY{p}{(}\PY{p}{)}\PY{p}{]} \PY{c+c1}{\PYZsh{}prevod 2D listu do vektoru reseni}
+             
+         
+         \PY{n}{P\PYZus{}matrix} \PY{o}{=} \PY{n}{P}\PY{o}{.}\PY{n}{values}
+         \PY{n}{p\PYZus{}stationary} \PY{o}{=} \PY{n}{stationary}\PY{p}{(}\PY{n}{P}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Stationary:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{p\PYZus{}stationary}\PY{p}{)}
+         
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Kontrolní součet:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{np}\PY{o}{.}\PY{n}{sum}\PY{p}{(}\PY{n}{p\PYZus{}stationary}\PY{p}{)}\PY{p}{)} \PY{c+c1}{\PYZsh{}kontrolni soucet}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Stationary: [0.18570145528394705, 0.06783413051436557, 0.014868368795939646,
+ 	0.015796940837522255, 0.04692576751394258, 0.10205425965931908, 
+ 	0.021216882050768715, 0.021843746900416038, 0.05215764575441392, 
+ 	0.04599409450396163, 0.00232320419454483, 0.008053552592696462, 
+ 	0.038557951783603245, 0.01688022014058139, 0.054979412400881736, 
+ 	0.061783587274558446, 0.014093962454750886, 0.0009294701178297338, 
+ 	0.054219534943122406, 0.04508217464800904, 0.06736804148266043, 
+ 	0.02462805399717019, 0.004645995127833057, 0.01812015989003305, 
+ 	0.00015486230600811335, 0.012857372099992197, 0.0009291527311291806]
+
+Kontrolní součet: 1.0000000000000009
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}18}]:} \PY{c+c1}{\PYZsh{}print(chars)}
+         \PY{n}{count} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{chars}\PY{p}{)}
+         \PY{n}{df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{data} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{char}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n+nb}{list}\PY{p}{(}\PY{n}{chars}\PY{p}{)}\PY{o}{+}\PY{n+nb}{list}\PY{p}{(}\PY{n}{chars}\PY{p}{)}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{values}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}
+         \PY{n+nb}{list}\PY{p}{(}\PY{n}{chars\PYZus{}x}\PY{o}{.}\PY{n}{prob}\PY{p}{)}\PY{o}{+}\PY{n}{p\PYZus{}stationary}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{kind}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{n+nb}{list}\PY{p}{(}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{data}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{*}\PY{n}{count}\PY{o}{+}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{stationary}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{*}\PY{n}{count}\PY{p}{)}\PY{p}{\PYZcb{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{14}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
+         \PY{n}{sns}\PY{o}{.}\PY{n}{barplot}\PY{p}{(}\PY{n}{x}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{char}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{hue}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{kind}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{y}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{values}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} 
+         \PY{n}{data}\PY{o}{=}\PY{n}{df}\PY{p}{,} \PY{n}{palette} \PY{o}{=} \PY{n}{colors}\PY{p}{,} \PY{n}{saturation}\PY{o}{=}\PY{l+m+mf}{1.}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Rozdělení znaků v textu a stacionární rozdělení}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{,}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{znak}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{,}\PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{pravděpodobnost výskytu}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_15_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+\subsection*{Diskuze k~výsledku}\label{diskuze-k-vuxfdsledku}
+
+Pro výsledný vektor stacionárního rozdělení jsme provedli kontrolní
+součet, zda se \(\sum_{i=0}^{26} \pi_i\) rovná 1. Malá odchylka
+1.0000000000000009 je způsobena sčítáním malých čísel s~omezenou
+desetinnou přesností. Výsledný \(\boldsymbol{\pi}\) je skutečně stacionárním
+rozdělením.
+
+
+\section*{4) Porovnejte stacionární rozdělení se získaným
+empirickým rozdělením. Tj. na hladině 5\% otestujte hypotézu, že se
+empirické rozdělení z~bodu 1 rovná stacionárnímu
+rozdělení.}\label{porovnejte-stacionuxe1rnuxed-rozdux11blenuxed-se-zuxedskanuxfdm-empirickuxfdm-rozdux11blenuxedm.-tj.-na-hladinux11b-5-otestujte-hypotuxe9zu-ux17ee-se-empirickuxe9-rozdux11blenuxed-z-bodu-1-rovnuxe1-stacionuxe1rnuxedmu-rozdux11blenuxed.}
+Pro otestování hypotézy použijeme test dobré shody \(\chi^2\) při
+známých parametrech:
+\[\chi^2 = \sum_{i=1}^k \frac{(N_i - np_i)^2}{np_i}\]
+
+\noindent
+s~kritickým oborem
+
+\[\chi^2 \geq \chi^2_{\alpha,k-1}\]
+
+\noindent
+Na hladině významnosti \(5\%\) budeme testovat hypotézu: 
+
+- Rozdělení se rovnají: \(H_0\): \(p'=p\)
+
+- Rozdělení jsou rozdílná: \(H_A\): \(p'\neq p\)
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}19}]:} \PY{n}{s}\PY{p}{,}\PY{n}{p} \PY{o}{=} \PY{n}{stats}\PY{o}{.}\PY{n}{chisquare}\PY{p}{(}\PY{n}{chars\PYZus{}x}\PY{o}{.}\PY{n}{prob}\PY{p}{,} \PY{n}{p\PYZus{}stationary}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{statistika:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}.8f}\PY{l+s+s2}{\PYZdq{}} \PY{o}{\PYZpc{}} \PY{n}{s}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{p\PYZus{}value:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{p}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+statistika: 0.00000037
+p\_value: 1.0
+
+    \end{Verbatim}
+
+\subsection*{Diskuze k~výsledku}\label{diskuze-k-vuxfdsledku}
+
+Pokud je hladina významnosti \(\alpha\) větší než \(p\) hodnota testu,
+zamítáme \(H_0\) ve prospěch \(H_A\) na hladině \(\alpha\). V~našem
+případě je \(p\) hodnota testu rovna 1, tedy hypotézu \(H_0\)
+\textbf{nezamítáme} a nezamítli bychom ji ani na hladině významnosti
+blížící se \(100\%\). Stejně tak můžeme porovnat Pearsonovu statistiku
+s~hodnotou z~tabulek kde \(\chi^2_{0.05,26} = 38.885\) a opět vidíme, že
+se k~rozhodnutí zamítnutí ani neblížíme.
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+    \end{document}
